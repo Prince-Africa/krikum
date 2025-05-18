@@ -7,15 +7,15 @@ function App() {
   const whatsappLink = "#"; // Replace with actual WhatsApp link
 
   return (
-    <div className="w-full min-h-screen px-4 sm:px-section-px pt-12 sm:pt-section-py pb-8 sm:pb-section-py relative bg-background-main inline-flex flex-col justify-start items-center gap-8 sm:gap-gutter overflow-x-hidden">
+    <div className="w-full min-h-screen px-4 md:px-section-px pt-0 md:pt-24 pb-8 md:pb-section-py relative  inline-flex flex-col justify-start items-center gap-6 md:gap-gutter overflow-x-hidden">
       {/* Navbar - Absolute positioned */}
-      <div className="w-full max-w-5xl h-16 sm:h-24 left-1/2 -translate-x-1/2 top-0 absolute px-4 sm:px-0 z-50">
-        <div className="w-full h-14 sm:h-16 pl-4 sm:pl-6 pr-2 sm:pr-3 mt-4 sm:mt-7 rounded-navbar outline-1 outline-border-secondary inline-flex justify-center items-center overflow-hidden">
-          <div className="self-stretch w-full h-10 sm:h-12 inline-flex justify-between items-center">
+      <div className="w-full max-w-5xl h-16 md:h-24 left-1/2 -translate-x-1/2 top-0 absolute px-4 md:px-0 z-50">
+        <div className="w-full h-14 md:h-16 pl-4 md:pl-6 pr-2 md:pr-3 mt-4 md:mt-7 rounded-navbar outline-1 outline-border-secondary inline-flex justify-center items-center overflow-hidden">
+          <div className="self-stretch w-full h-10 md:h-12 inline-flex justify-between items-center">
             <div className="flex justify-start items-start">
-              <div className="h-10 sm:h-12 px-2 sm:px-3 flex justify-start items-center">
+              <div className="h-10 md:h-12 px-2 md:px-3 flex justify-start items-center">
                 <img 
-                  className="h-8 sm:h-12 w-auto" 
+                  className="h-8 md:h-12 w-auto" 
                   src="/src/assets/item7_navbar_logo.png" 
                   alt="Item 7 Logo"
                 />
@@ -47,9 +47,9 @@ function App() {
       <div className="w-[548px] h-[491px] left-[calc(50%-200px)] top-[450px] absolute blur-accent-strong opacity-60 pointer-events-none" />
 
       {/* Hero Section */}
-      <div className="w-full max-w-3xl flex flex-col justify-start items-center gap-6 sm:gap-element-gap mt-20 sm:mt-28 z-10">
-        <div className="self-stretch flex flex-col justify-start items-center gap-4 sm:gap-element-gap">
-          <div className="w-full max-w-3xl text-center flex flex-col items-center justify-center gap-2">
+      <div className="w-full min-h-[100vh] md:min-h-0 max-w-3xl flex flex-col justify-end md:justify-start items-center gap-4 md:gap-4 mt-0 z-10 pb-12 md:pb-0">
+        <div className="self-stretch flex flex-col justify-start items-center gap-3 md:gap-4">
+          <div className="w-full max-w-3xl text-center flex flex-col items-center justify-center gap-1.5">
             <div className="flex items-center justify-center gap-3 sm:gap-4">
               <span style={{ fontFamily: 'Eras Demi ITC' }} className="text-text-primary-darkbg text-3xl sm:text-hero font-normal leading-tight tracking-[0%] text-center whitespace-nowrap">Get Your</span>
               <img src="/src/assets/item7_text.png" alt="Item 7" className="h-10 sm:h-14 w-auto" />
@@ -60,7 +60,7 @@ function App() {
             </div>
           </div>
           
-          <div className="self-stretch text-center text-text-primary-darkbg text-lg font-body leading-relaxed">
+          <div className="self-stretch text-center text-text-primary-darkbg text-lg font-body leading-snug">
             Avoid the wait for pickup, <br/>Order through the app today.
           </div>
         </div>
@@ -97,18 +97,18 @@ function App() {
 
       {/* Main Image */}
       <img 
-        className="w-[80%] sm:w-auto max-h-[60vh] sm:max-h-[80vh] mt-8 sm:mt-16 z-0" 
-        src="/src/assets/iPhone 16 Pro.svg" 
-        alt="iPhone 16 Pro App Preview" 
+        className="w-[80%] md:w-auto scale-[1.15] mt-8 md:mt-12 z-0" 
+        src="/src/assets/iphone mockup.png" 
+        alt="iPhone App Preview" 
       />
 
       {/* How it Works Section */}
-      <div className="w-full px-4 sm:px-section-px py-12 sm:py-section-py flex flex-col justify-start items-center gap-8 sm:gap-10 overflow-hidden z-10">
-        <div className="w-full max-w-3xl text-center text-text-primary-darkbg text-3xl sm:text-4xl font-heading leading-tight mb-8 sm:mb-16">
+      <div className="w-full px-4 md:px-section-px py-12 md:py-section-py flex flex-col justify-start items-center gap-8 md:gap-10 overflow-hidden z-10">
+        <div className="w-full max-w-3xl text-center text-text-primary-darkbg text-3xl md:text-4xl font-heading leading-tight mb-8 md:mb-16">
           How it works
         </div>
 
-        <div className="self-stretch grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-gutter px-2 sm:px-0">
+        <div className="self-stretch grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-gutter px-2 md:px-0">
           <div className="flex-1 inline-flex flex-col justify-start items-center gap-4 sm:gap-element-gap">
             <img src="/src/assets/ready.png" alt="Ready" className="h-16 sm:h-20 w-auto mb-4 sm:mb-6" />
             <div className="self-stretch flex flex-col justify-start items-start gap-element-gap">
@@ -148,11 +148,11 @@ function App() {
       </div>
 
       {/* Download App CTA Section */}
-      <div className="w-full max-w-7xl h-auto min-h-[640px] sm:min-h-[640px] relative bg-black rounded-[32px] sm:rounded-[64px] outline-4 outline-white backdrop-blur-[2px] overflow-hidden mx-auto px-4 sm:px-8 py-8 sm:py-16 flex items-center">
+      <div className="w-full max-w-6xl h-auto min-h-[640px] sm:min-h-[640px] relative bg-black rounded-[32px] sm:rounded-[64px] outline-4 outline-white backdrop-blur-[2px] overflow-hidden mx-auto px-4 sm:px-8 py-8 sm:py-16 flex items-center">
         {/* Decorative Blur - exact positioning from Figma */}
         <div className="w-1/2 h-1/2 right-0 bottom-0 absolute bg-red-600 blur-[300px]" />
         
-        <div className="relative flex flex-col justify-start items-start gap-4 sm:gap-6 w-full sm:w-auto"> {/* Content above blur */}
+        <div className="relative flex flex-col justify-start items-start gap-4 sm:gap-6 w-full sm:w-auto md:pl-16"> {/* Content above blur */}
           <div className="flex flex-col justify-start items-start gap-4 sm:gap-6">
             <div style={{ fontFamily: 'Eras Demi ITC' }} className="max-w-lg text-white text-4xl sm:text-6xl font-normal leading-tight">Download the App today!</div>
           </div>

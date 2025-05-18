@@ -1,8 +1,9 @@
+/* Import other fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400&display=swap');
 /* src/index.css */
 @import "tailwindcss";
 
-/* Import other fonts from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400&display=swap');
+
 
 /* Add Eras Demi ITC font */
 @font-face {
