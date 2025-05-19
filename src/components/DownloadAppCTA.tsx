@@ -1,5 +1,8 @@
 import type { FC } from 'react';
 import StoreButton from './StoreButton';
+import appleIcon from '@/assets/apple icon.png';
+import playstoreIcon from '@/assets/playstore_icon.png';
+import handMockup from '@/assets/handmockup.svg';
 
 interface DownloadAppCTAProps {
   appStoreLink: string;
@@ -28,13 +31,13 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = ({ appStoreLink, playStoreLink }
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
           <StoreButton
             href={appStoreLink}
-            icon="/src/assets/apple icon.png"
+            icon={appleIcon}
             storeName="App Store"
             className="bg-white flex-1 sm:flex-initial"
           />
           <StoreButton
             href={playStoreLink}
-            icon="/src/assets/playstore_icon.png"
+            icon={playstoreIcon}
             storeName="Play Store"
             className="bg-white flex-1 sm:flex-initial"
           />
@@ -45,7 +48,7 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = ({ appStoreLink, playStoreLink }
       <div className="absolute w-full right-0 bottom-0 sm:w-[68%] h-[250px] sm:h-[90%] z-[20]">
         <img 
           className="w-full h-full object-contain absolute bottom-0 right-0 sm:right-[5%]"
-          src="/src/assets/handmockup.svg" 
+          src={handMockup} 
           alt="Hand holding phone with Item 7 app"
         />
       </div>

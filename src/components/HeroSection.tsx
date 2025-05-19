@@ -1,6 +1,11 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import StoreButton from './StoreButton';
+import item7Text from '@/assets/item7_text.png';
+import goText from '@/assets/go_text.png';
+import appleIcon from '@/assets/apple icon.png';
+import playstoreIcon from '@/assets/playstore_icon.png';
+import iphoneMockup from '@/assets/iphone mockup.png';
 
 interface HeroSectionProps {
   appStoreLink: string;
@@ -68,7 +73,7 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
               </motion.span>
               <motion.img 
                 variants={imageVariants}
-                src="/src/assets/item7_text.png" 
+                src={item7Text} 
                 alt="Item 7" 
                 className="h-12 md:h-10 lg:h-14 w-auto"
               />
@@ -83,7 +88,7 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
               </motion.span>
               <motion.img 
                 variants={imageVariants}
-                src="/src/assets/go_text.png" 
+                src={goText} 
                 alt="Go" 
                 className="h-12 md:h-10 lg:h-14 w-auto"
               />
@@ -102,12 +107,12 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
           <div className="pt-6 md:pt-4 inline-flex flex-wrap justify-center items-center gap-4 md:gap-group-gap w-full px-6 md:px-0">
             <StoreButton
               href={appStoreLink}
-              icon="/src/assets/apple icon.png"
+              icon={appleIcon}
               storeName="App Store"
             />
             <StoreButton
               href={playStoreLink}
-              icon="/src/assets/playstore_icon.png"
+              icon={playstoreIcon}
               storeName="Play Store"
             />
           </div>
@@ -116,7 +121,7 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
 
       <img 
         className="w-[80%] md:w-auto scale-[1.15] mt-16 md:mt-24 z-0" 
-        src="/src/assets/iphone mockup.png" 
+        src={iphoneMockup} 
         alt="iPhone App Preview" 
       />
     </>

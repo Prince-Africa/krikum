@@ -1,4 +1,7 @@
 import type { FC } from 'react';
+import readyIcon from '@/assets/ready.png';
+import setIcon from '@/assets/set.png';
+import goIcon from '@/assets/go.png';
 
 const HowItWorksSection: FC = () => {
   return (
@@ -9,7 +12,7 @@ const HowItWorksSection: FC = () => {
 
       <div className="self-stretch grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-gutter px-0">
         <div className="flex-1 inline-flex flex-col justify-start items-center gap-3 sm:gap-element-gap">
-          <img src="/src/assets/ready.png" alt="Ready" className="h-12 sm:h-14 md:h-20 w-auto mb-3 sm:mb-6" />
+          <img src={readyIcon} alt="Ready" className="h-12 sm:h-14 md:h-20 w-auto mb-3 sm:mb-6" />
           <div className="self-stretch flex flex-col justify-start items-center gap-2 sm:gap-element-gap">
             <div className="self-stretch text-center text-text-primary-darkbg text-lg sm:text-2xl font-heading leading-7 sm:leading-9">
               Download The App
@@ -20,7 +23,7 @@ const HowItWorksSection: FC = () => {
           </div>
         </div>
         <div className="flex-1 inline-flex flex-col justify-start items-center gap-3 sm:gap-element-gap">
-          <img src="/src/assets/set.png" alt="Set" className="h-12 sm:h-14 md:h-20 w-auto mb-3 sm:mb-6" />
+          <img src={setIcon} alt="Set" className="h-12 sm:h-14 md:h-20 w-auto mb-3 sm:mb-6" />
           <div className="self-stretch flex flex-col justify-start items-center gap-2 sm:gap-element-gap">
             <div className="self-stretch text-center text-text-primary-darkbg text-lg sm:text-2xl font-heading leading-7 sm:leading-9">
               Make Your Order
@@ -31,7 +34,7 @@ const HowItWorksSection: FC = () => {
           </div>
         </div>
         <div className="flex-1 inline-flex flex-col justify-start items-center gap-3 sm:gap-element-gap">
-          <img src="/src/assets/go.png" alt="Go" className="h-12 sm:h-14 md:h-20 w-auto mb-3 sm:mb-6" />
+          <img src={goIcon} alt="Go" className="h-12 sm:h-14 md:h-20 w-auto mb-3 sm:mb-6" />
           <div className="self-stretch flex flex-col justify-start items-center gap-2 sm:gap-element-gap">
             <div className="self-stretch text-center text-text-primary-darkbg text-lg sm:text-2xl font-heading leading-7 sm:leading-9">
               Pick It Up

@@ -1,5 +1,9 @@
 import type { FC } from 'react';
 
+import navbarLogo from '@/assets/item7_navbar_logo.png';
+import whatsappIcon from '@/assets/tabler_brand-whatsapp-filled.png';
+import dropdownIcon from '@/assets/dropdown.png';
+
 interface NavbarProps {
   whatsappLink: string;
 }
@@ -13,7 +17,7 @@ const Navbar: FC<NavbarProps> = ({ whatsappLink }) => {
             <div className="h-10 md:h-12 px-2 md:px-3 flex justify-start items-center">
               <img 
                 className="h-8 md:h-12 w-auto" 
-                src="/src/assets/item7_navbar_logo.png" 
+                src={navbarLogo}
                 alt="Item 7 Logo"
               />
             </div>
@@ -26,7 +30,7 @@ const Navbar: FC<NavbarProps> = ({ whatsappLink }) => {
               className="block sm:hidden"
             >
               <img 
-                src="/src/assets/tabler_brand-whatsapp-filled.png" 
+                src={whatsappIcon} 
                 alt="WhatsApp" 
                 className="w-7 h-7 object-contain"
               />
@@ -40,13 +44,13 @@ const Navbar: FC<NavbarProps> = ({ whatsappLink }) => {
                 style={{marginRight: '0px'}}
               >
                 <img 
-                  src="/src/assets/tabler_brand-whatsapp-filled.png" 
+                  src={whatsappIcon} 
                   alt="WhatsApp" 
                   className="w-6 h-6 object-contain mr-3"
                 />
                 <span className="text-white font-montserrat font-semibold text-base leading-normal">Contact Us on Whatsapp</span>
                 <img 
-                  src="/src/assets/dropdown.png" 
+                  src={dropdownIcon} 
                   alt="Dropdown" 
                   className="w-6 h-6 object-contain ml-1"
                 />
