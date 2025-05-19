@@ -7,12 +7,12 @@ function App() {
   const whatsappLink = "#"; // Replace with actual WhatsApp link
 
   return (
-    <div className="w-full min-h-screen px-4 md:px-section-px pt-0 md:pt-24 pb-8 md:pb-section-py relative  inline-flex flex-col justify-start items-center gap-6 md:gap-gutter overflow-x-hidden">
+    <div className="w-full min-h-screen px-4 md:px-section-px pt-0 md:pt-24 pb-8 md:pb-section-py relative flex flex-col justify-start items-center gap-6 md:gap-gutter overflow-x-hidden">
       {/* Navbar - Absolute positioned */}
-      <div className="w-full max-w-5xl h-16 md:h-24 left-1/2 -translate-x-1/2 top-0 absolute px-4 md:px-0 z-50">
-        <div className="w-full h-14 md:h-16 pl-4 md:pl-6 pr-2 md:pr-3 mt-4 md:mt-7 rounded-navbar outline-1 outline-border-secondary inline-flex justify-center items-center overflow-hidden">
-          <div className="self-stretch w-full h-10 md:h-12 inline-flex justify-between items-center">
-            <div className="flex justify-start items-start">
+      <div className="w-full max-w-5xl h-16 md:h-18 left-1/2 -translate-x-1/2 top-0 fixed px-4 md:px-0 z-50 flex items-center">
+        <div className="w-full h-14 md:h-18 pr-3 mt-0 md:mt-4 bg-black rounded-[48px] shadow-[0px_3px_6px_0px_rgba(255,0,0,0.20),0px_10px_10px_0px_rgba(255,0,0,0.17),0px_23px_14px_0px_rgba(255,0,0,0.10),0px_40px_16px_0px_rgba(255,0,0,0.03),0px_63px_18px_0px_rgba(255,0,0,0.00)] flex justify-center items-center overflow-hidden border border-black">
+          <div className="self-stretch w-full h-full flex justify-between items-center">
+            <div className="flex justify-start items-center">
               <div className="h-10 md:h-12 px-2 md:px-3 flex justify-start items-center">
                 <img 
                   className="h-8 md:h-12 w-auto" 
@@ -21,21 +21,35 @@ function App() {
                 />
               </div>
             </div>
-            <div className="flex justify-center items-center gap-4 sm:gap-8">
-              <div className="flex justify-center items-center gap-group-gap">
+            <div className="flex justify-center items-center gap-4 sm:gap-8 pr-0 md:pr-0">
+              {/* Mobile: Only WhatsApp icon, no container */}
+              <a 
+                href={whatsappLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block sm:hidden"
+              >
+                <img 
+                  src="/src/assets/tabler_brand-whatsapp-filled.png" 
+                  alt="WhatsApp" 
+                  className="w-7 h-7 object-contain"
+                />
+              </a>
+              {/* Desktop: Button with icon and text styled as in Figma */}
+              <div className="hidden sm:flex justify-center items-center">
                 <a 
                   href={whatsappLink} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="px-button-px py-button-py bg-background-button rounded-button flex justify-center items-center gap-2 text-text-primary-lightbg font-button text-base leading-normal hover:opacity-90 transition-opacity"
+                  className="px-6 py-3 pr-3 rounded-[41px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border-2 border-white flex justify-center items-center gap-3 bg-black hover:opacity-90 transition-opacity"
+                  style={{marginRight: '0px'}}
                 >
                   <img 
                     src="/src/assets/tabler_brand-whatsapp-filled.png" 
                     alt="WhatsApp" 
                     className="w-6 h-6 object-contain"
                   />
-                  <span className="hidden sm:inline text-black font-montserrat font-semibold text-base leading-[150%] tracking-[0%]">Contact Us on Whatsapp</span>
-                  <span className="sm:hidden text-black font-montserrat font-semibold text-base leading-[150%] tracking-[0%]">WhatsApp</span>
+                  <span className="text-white font-montserrat font-semibold text-base leading-normal">Contact Us on Whatsapp</span>
                 </a>
               </div>
             </div>
@@ -47,72 +61,71 @@ function App() {
       <div className="w-[548px] h-[491px] left-[calc(50%-200px)] top-[450px] absolute blur-accent-strong opacity-60 pointer-events-none" />
 
       {/* Hero Section */}
-      <div className="w-full min-h-[100vh] md:min-h-0 max-w-3xl flex flex-col justify-end md:justify-start items-center gap-4 md:gap-4 mt-0 z-10 pb-12 md:pb-0">
-        <div className="self-stretch flex flex-col justify-start items-center gap-3 md:gap-4">
-          <div className="w-full max-w-3xl text-center flex flex-col items-center justify-center gap-1.5">
-            <div className="flex items-center justify-center gap-3 sm:gap-4">
-              <span style={{ fontFamily: 'Eras Demi ITC' }} className="text-text-primary-darkbg text-3xl sm:text-hero font-normal leading-tight tracking-[0%] text-center whitespace-nowrap">Get Your</span>
-              <img src="/src/assets/item7_text.png" alt="Item 7" className="h-10 sm:h-14 w-auto" />
+      <div className="w-full flex-1 flex items-center justify-center md:block min-h-[calc(100vh-4rem)] md:min-h-0 max-w-3xl mx-auto z-10 md:mt-16">
+        <div className="w-full flex flex-col justify-center items-center gap-6 md:gap-4 py-8 md:py-0">
+          <div className="w-full max-w-3xl text-center flex flex-col items-center justify-center gap-3 md:gap-1.5">
+            <div className="flex items-center justify-center gap-4">
+              <span style={{ fontFamily: 'Eras Demi ITC' }} className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-normal leading-tight tracking-[0%] text-center whitespace-nowrap">Get Your</span>
+              <img src="/src/assets/item7_text.png" alt="Item 7" className="h-12 md:h-10 lg:h-14 w-auto" />
             </div>
-            <div className="flex items-center justify-center gap-3 sm:gap-4">
-              <span style={{ fontFamily: 'Eras Demi ITC' }} className="text-text-primary-darkbg text-3xl sm:text-hero font-normal leading-tight tracking-[0%] text-center whitespace-nowrap">to</span>
-              <img src="/src/assets/go_text.png" alt="Go" className="h-10 sm:h-14 w-auto" />
+            <div className="flex items-center justify-center gap-4">
+              <span style={{ fontFamily: 'Eras Demi ITC' }} className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-normal leading-tight tracking-[0%] text-center whitespace-nowrap">to</span>
+              <img src="/src/assets/go_text.png" alt="Go" className="h-12 md:h-10 lg:h-14 w-auto" />
             </div>
           </div>
           
-          <div className="self-stretch text-center text-text-primary-darkbg text-lg font-body leading-snug">
-            Avoid the wait for pickup, <br/>Order through the app today.
+          <div className="self-stretch text-center text-text-primary-darkbg text-xl md:text-lg font-body leading-relaxed md:leading-snug px-4 md:px-0">
+            Avoid the wait for pickup, <br className="hidden sm:block"/>Order through the app today.
           </div>
-        </div>
-
-        <div className="pt-4 inline-flex flex-wrap justify-center items-center gap-group-gap">
-          <a 
-            href={appStoreLink} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-button-px py-button-py bg-background-button rounded-button flex justify-center items-center gap-2 text-text-primary-lightbg hover:opacity-90 transition-opacity"
-          >
-            <img 
-              src="/src/assets/apple icon.png" 
-              alt="App Store" 
-              className="w-6 h-6 object-contain"
-            />
-            <span className="text-black font-montserrat font-semibold text-base leading-[150%] tracking-[0%]">App Store</span>
-          </a>
-          <a 
-            href={playStoreLink} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-button-px py-button-py bg-background-button rounded-button flex justify-center items-center gap-2 text-text-primary-lightbg hover:opacity-90 transition-opacity"
-          >
-            <img 
-              src="/src/assets/playstore_icon.png" 
-              alt="Play Store" 
-              className="w-6 h-6 object-contain"
-            />
-            <span className="text-black font-montserrat font-semibold text-base leading-[150%] tracking-[0%]">Play Store</span>
-          </a>
+          <div className="pt-6 md:pt-4 inline-flex flex-wrap justify-center items-center gap-4 md:gap-group-gap w-full px-6 md:px-0">
+            <a 
+              href={appStoreLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-button-px py-3 md:py-button-py bg-background-button rounded-button flex justify-center items-center gap-3 text-text-primary-lightbg hover:opacity-90 transition-opacity"
+            >
+              <img 
+                src="/src/assets/apple icon.png" 
+                alt="App Store" 
+                className="w-7 h-7 md:w-6 md:h-6 object-contain"
+              />
+              <span className="text-black font-montserrat font-semibold text-base leading-[150%] tracking-[0%]">App Store</span>
+            </a>
+            <a 
+              href={playStoreLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-button-px py-3 md:py-button-py bg-background-button rounded-button flex justify-center items-center gap-3 text-text-primary-lightbg hover:opacity-90 transition-opacity"
+            >
+              <img 
+                src="/src/assets/playstore_icon.png" 
+                alt="Play Store" 
+                className="w-7 h-7 md:w-6 md:h-6 object-contain"
+              />
+              <span className="text-black font-montserrat font-semibold text-base leading-[150%] tracking-[0%]">Play Store</span>
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Main Image */}
       <img 
-        className="w-[80%] md:w-auto scale-[1.15] mt-8 md:mt-12 z-0" 
+        className="w-[80%] md:w-auto scale-[1.15] mt-16 md:mt-24 z-0" 
         src="/src/assets/iphone mockup.png" 
         alt="iPhone App Preview" 
       />
 
       {/* How it Works Section */}
-      <div className="w-full px-4 md:px-section-px py-12 md:py-section-py flex flex-col justify-start items-center gap-8 md:gap-10 overflow-hidden z-10">
-        <div className="w-full max-w-3xl text-center text-text-primary-darkbg text-3xl md:text-4xl font-heading leading-tight mb-8 md:mb-16">
+      <div className="w-full px-4 md:px-section-px py-10 md:py-section-py flex flex-col justify-start items-center gap-6 md:gap-10 overflow-hidden z-10">
+        <div className="w-full max-w-3xl text-center text-text-primary-darkbg text-2xl md:text-4xl font-heading leading-tight mb-6 md:mb-16">
           How it works
         </div>
 
-        <div className="self-stretch grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-gutter px-2 md:px-0">
-          <div className="flex-1 inline-flex flex-col justify-start items-center gap-4 sm:gap-element-gap">
-            <img src="/src/assets/ready.png" alt="Ready" className="h-16 sm:h-20 w-auto mb-4 sm:mb-6" />
-            <div className="self-stretch flex flex-col justify-start items-start gap-element-gap">
-              <div className="self-stretch text-center text-text-primary-darkbg text-xl sm:text-2xl font-heading leading-8 sm:leading-9">
+        <div className="self-stretch grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-gutter px-0">
+          <div className="flex-1 inline-flex flex-col justify-start items-center gap-3 sm:gap-element-gap">
+            <img src="/src/assets/ready.png" alt="Ready" className="h-14 sm:h-20 w-auto mb-3 sm:mb-6" />
+            <div className="self-stretch flex flex-col justify-start items-center gap-2 sm:gap-element-gap">
+              <div className="self-stretch text-center text-text-primary-darkbg text-lg sm:text-2xl font-heading leading-7 sm:leading-9">
                 Download The App
               </div>
               <div className="self-stretch text-center text-text-primary-darkbg text-sm sm:text-base font-button leading-normal">
@@ -120,26 +133,24 @@ function App() {
               </div>
             </div>
           </div>
-          
-          <div className="flex-1 inline-flex flex-col justify-start items-center gap-element-gap">
-            <img src="/src/assets/set.png" alt="Set" className="h-20 w-auto mb-6" />
-            <div className="self-stretch flex flex-col justify-start items-start gap-element-gap">
-              <div className="self-stretch text-center text-text-primary-darkbg text-2xl font-heading leading-9">
+          <div className="flex-1 inline-flex flex-col justify-start items-center gap-3 sm:gap-element-gap">
+            <img src="/src/assets/set.png" alt="Set" className="h-16 w-auto mb-4 sm:mb-6" />
+            <div className="self-stretch flex flex-col justify-start items-center gap-2 sm:gap-element-gap">
+              <div className="self-stretch text-center text-text-primary-darkbg text-lg sm:text-2xl font-heading leading-7 sm:leading-9">
                 Make Your Order
               </div>
-              <div className="self-stretch text-center text-text-primary-darkbg text-base font-button leading-normal">
+              <div className="self-stretch text-center text-text-primary-darkbg text-sm sm:text-base font-button leading-normal">
                 Pick your favourite item 7 through the app, customize the order to your heart's content, and pick the closest pick-up location to you.
               </div>
             </div>
           </div>
-
-          <div className="flex-1 inline-flex flex-col justify-start items-center gap-element-gap">
-            <img src="/src/assets/go.png" alt="Go" className="h-20 w-auto mb-6" />
-            <div className="self-stretch flex flex-col justify-start items-start gap-element-gap">
-              <div className="self-stretch text-center text-text-primary-darkbg text-2xl font-heading leading-9">
+          <div className="flex-1 inline-flex flex-col justify-start items-center gap-3 sm:gap-element-gap">
+            <img src="/src/assets/go.png" alt="Go" className="h-16 w-auto mb-4 sm:mb-6" />
+            <div className="self-stretch flex flex-col justify-start items-center gap-2 sm:gap-element-gap">
+              <div className="self-stretch text-center text-text-primary-darkbg text-lg sm:text-2xl font-heading leading-7 sm:leading-9">
                 Pick It Up
               </div>
-              <div className="self-stretch text-center text-text-primary-darkbg text-base font-button leading-normal">
+              <div className="self-stretch text-center text-text-primary-darkbg text-sm sm:text-base font-button leading-normal">
                 When your order is ready, you'll get notified and you can pick it up!
               </div>
             </div>
