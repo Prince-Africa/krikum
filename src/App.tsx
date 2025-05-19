@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="w-full min-h-screen px-4 md:px-section-px pt-0 md:pt-24 pb-8 md:pb-section-py relative flex flex-col justify-start items-center gap-6 md:gap-gutter overflow-x-hidden">
       {/* Navbar - Absolute positioned */}
-      <div className="w-full max-w-5xl h-16 md:h-18 left-1/2 -translate-x-1/2 top-0 fixed px-4 md:px-0 z-50 flex items-center">
-        <div className="w-full h-14 md:h-18 pr-3 mt-0 md:mt-4 bg-black rounded-[48px] shadow-[0px_3px_6px_0px_rgba(255,0,0,0.20),0px_10px_10px_0px_rgba(255,0,0,0.17),0px_23px_14px_0px_rgba(255,0,0,0.10),0px_40px_16px_0px_rgba(255,0,0,0.03),0px_63px_18px_0px_rgba(255,0,0,0.00)] flex justify-center items-center overflow-hidden border border-black">
+      <div className="w-full max-w-5xl h-16 md:h-18 left-1/2 -translate-x-1/2 top-0 md:top-[29px] fixed px-4 md:px-0 z-50 flex items-center">
+        <div className="w-full h-14 md:h-18 pr-3 mt-0 bg-black rounded-[48px] shadow-[0px_3px_6px_0px_rgba(255,0,0,0.20),0px_10px_10px_0px_rgba(255,0,0,0.17),0px_23px_14px_0px_rgba(255,0,0,0.10),0px_40px_16px_0px_rgba(255,0,0,0.03),0px_63px_18px_0px_rgba(255,0,0,0.00)] flex justify-center items-center overflow-hidden border border-black">
           <div className="self-stretch w-full h-full flex justify-between items-center">
             <div className="flex justify-start items-center">
               <div className="h-10 md:h-12 px-2 md:px-3 flex justify-start items-center">
@@ -41,15 +41,20 @@ function App() {
                   href={whatsappLink} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="px-6 py-3 pr-3 rounded-[41px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border-2 border-white flex justify-center items-center gap-3 bg-black hover:opacity-90 transition-opacity"
+                  className="px-6 py-3 pr-3 rounded-[41px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border-2 border-white flex justify-center items-center bg-black hover:opacity-90 transition-opacity"
                   style={{marginRight: '0px'}}
                 >
                   <img 
                     src="/src/assets/tabler_brand-whatsapp-filled.png" 
                     alt="WhatsApp" 
-                    className="w-6 h-6 object-contain"
+                    className="w-6 h-6 object-contain mr-3"
                   />
                   <span className="text-white font-montserrat font-semibold text-base leading-normal">Contact Us on Whatsapp</span>
+                  <img 
+                    src="/src/assets/dropdown.png" 
+                    alt="Dropdown" 
+                    className="w-6 h-6 object-contain ml-1"
+                  />
                 </a>
               </div>
             </div>
