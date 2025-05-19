@@ -1,0 +1,126 @@
+import type { FC } from 'react';
+import { motion } from 'framer-motion';
+import StoreButton from './StoreButton';
+
+interface HeroSectionProps {
+  appStoreLink: string;
+  playStoreLink: string;
+}
+
+const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
+  const subtitleVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, delay: 1.2, ease: "easeOut" }
+    }
+  };
+
+  return (
+    <>
+      <div className="w-[548px] h-[491px] left-[calc(50%-200px)] top-[450px] absolute blur-accent-strong opacity-60 pointer-events-none" />
+
+      <div className="w-full flex-1 flex items-center justify-center md:block min-h-[calc(100vh-4rem)] md:min-h-0 max-w-3xl mx-auto z-10 md:mt-16">
+        <div className="w-full flex flex-col justify-center items-center gap-6 md:gap-4 py-8 md:py-0">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="w-full max-w-3xl text-center flex flex-col items-center justify-center gap-3 md:gap-1.5"
+          >
+            <div className="flex items-center justify-center gap-4">
+              <motion.span 
+                variants={itemVariants}
+                style={{ fontFamily: 'Eras Demi ITC' }} 
+                className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-normal leading-tight tracking-[0%] text-center whitespace-nowrap"
+              >
+                Get Your
+              </motion.span>
+              <motion.img 
+                variants={imageVariants}
+                src="/src/assets/item7_text.png" 
+                alt="Item 7" 
+                className="h-12 md:h-10 lg:h-14 w-auto"
+              />
+            </div>
+            <div className="flex items-center justify-center gap-4">
+              <motion.span 
+                variants={itemVariants}
+                style={{ fontFamily: 'Eras Demi ITC' }} 
+                className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-normal leading-tight tracking-[0%] text-center whitespace-nowrap"
+              >
+                to
+              </motion.span>
+              <motion.img 
+                variants={imageVariants}
+                src="/src/assets/go_text.png" 
+                alt="Go" 
+                className="h-12 md:h-10 lg:h-14 w-auto"
+              />
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            variants={subtitleVariants}
+            initial="hidden"
+            animate="visible"
+            className="self-stretch text-center text-text-primary-darkbg text-xl md:text-lg font-body leading-relaxed md:leading-snug px-4 md:px-0"
+          >
+            Avoid the wait for pickup, <br className="hidden sm:block"/>Order through the app today.
+          </motion.div>
+          
+          <div className="pt-6 md:pt-4 inline-flex flex-wrap justify-center items-center gap-4 md:gap-group-gap w-full px-6 md:px-0">
+            <StoreButton
+              href={appStoreLink}
+              icon="/src/assets/apple icon.png"
+              storeName="App Store"
+            />
+            <StoreButton
+              href={playStoreLink}
+              icon="/src/assets/playstore_icon.png"
+              storeName="Play Store"
+            />
+          </div>
+        </div>
+      </div>
+
+      <img 
+        className="w-[80%] md:w-auto scale-[1.15] mt-16 md:mt-24 z-0" 
+        src="/src/assets/iphone mockup.png" 
+        alt="iPhone App Preview" 
+      />
+    </>
+  );
+};
+
+export default HeroSection;
