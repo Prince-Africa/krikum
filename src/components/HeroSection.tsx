@@ -66,7 +66,8 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
             <div className="flex items-center justify-center gap-4">
               <motion.span 
                 variants={itemVariants}
-                className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-normal leading-tight tracking-[0%] text-center whitespace-nowrap font-heading"
+                style={{ fontFamily: 'Eras ITC, Arial Black, sans-serif' }}
+                className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-bold leading-tight tracking-[0%] text-center whitespace-nowrap"
               >
                 Get Your
               </motion.span>
@@ -80,7 +81,8 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
             <div className="flex items-center justify-center gap-4">
               <motion.span 
                 variants={itemVariants}
-                className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-normal leading-tight tracking-[0%] text-center whitespace-nowrap font-heading"
+                style={{ fontFamily: 'Eras ITC, Arial Black, sans-serif' }}
+                className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-bold leading-tight tracking-[0%] text-center whitespace-nowrap"
               >
                 to
               </motion.span>

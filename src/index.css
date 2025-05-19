@@ -3,14 +3,12 @@
 /* src/index.css */
 @import "tailwindcss";
 
-/* Add Eras Demi ITC font with fallbacks */
 @font-face {
-  font-family: 'Eras Demi';
+  font-family: 'Eras ITC';
   src: local('Eras Demi ITC'),
-       local('Eras Bold ITC'),
        local('ErasDemiITC'),
-       local('ErasBoldITC');
-  font-weight: normal;
+       url('/fonts/ERASDEMI.TTF') format('truetype');
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
