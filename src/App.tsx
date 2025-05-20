@@ -12,7 +12,7 @@ const App: FC = () => {
   const whatsappLink = "#"; // Replace with actual WhatsApp link
 
   return (
-    <div className="w-full min-h-screen px-4 md:px-section-px pt-0 md:pt-24 pb-8 md:pb-section-py relative flex flex-col justify-start items-center gap-6 md:gap-gutter overflow-x-hidden">
+    <div className="w-full min-h-screen px-4 md:px-section-px pt-16 md:pt-24 pb-8 md:pb-section-py relative flex flex-col justify-start items-center gap-12 md:gap-gutter overflow-x-hidden">
       <Navbar whatsappLink={whatsappLink} />
       <HeroSection appStoreLink={appStoreLink} playStoreLink={playStoreLink} />
       <HowItWorksSection />

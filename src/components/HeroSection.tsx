@@ -55,8 +55,8 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
     <>
       <div className="w-[548px] h-[491px] left-[calc(50%-200px)] top-[450px] absolute blur-accent-strong opacity-60 pointer-events-none" />
 
-      <div className="w-full flex-1 flex items-center justify-center md:block min-h-[calc(100vh-4rem)] md:min-h-0 max-w-3xl mx-auto z-10 md:mt-16">
-        <div className="w-full flex flex-col justify-center items-center gap-6 md:gap-4 py-8 md:py-0">
+      <div className="w-full flex-1 flex items-start md:items-center justify-center md:block max-w-3xl mx-auto z-10 mt-24 md:mt-16">
+        <div className="w-full flex flex-col justify-center items-center gap-8 md:gap-4 pt-20 md:pt-0 pb-8 md:py-0">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -99,28 +99,30 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
             variants={subtitleVariants}
             initial="hidden"
             animate="visible"
-            className="self-stretch text-center text-text-primary-darkbg text-xl md:text-lg font-body leading-relaxed md:leading-snug px-4 md:px-0"
+            className="self-stretch text-center text-text-primary-darkbg text-xl md:text-lg font-body leading-relaxed md:leading-snug px-2 md:px-0"
           >
             Avoid the wait for pickup, <br className="hidden sm:block"/>Order through the app today.
           </motion.div>
           
-          <div className="pt-6 md:pt-4 inline-flex flex-wrap justify-center items-center gap-4 md:gap-group-gap w-full px-6 md:px-0">
+          <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
             <StoreButton
               href={appStoreLink}
               icon={appleIcon}
               storeName="App Store"
+              className="flex-1"
             />
             <StoreButton
               href={playStoreLink}
               icon={playstoreIcon}
               storeName="Play Store"
+              className="flex-1"
             />
           </div>
         </div>
       </div>
 
       <img 
-        className="w-[80%] md:w-auto scale-[1.15] mt-16 md:mt-24 z-0" 
+        className="w-[85%] md:w-auto scale-[1.15] mt-16 md:mt-24 z-0" 
         src={iphoneMockup} 
         alt="iPhone App Preview" 
       />

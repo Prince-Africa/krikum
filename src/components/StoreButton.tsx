@@ -40,7 +40,7 @@ const StoreButton: FC<StoreButtonProps> = ({ href, icon, storeName, className = 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`w-full sm:w-auto px-button-px py-3 md:py-button-py bg-background-button rounded-button flex justify-center items-center gap-3 text-text-primary-lightbg hover:opacity-90 transition-opacity ${className}`}
+      className={`min-w-[150px] px-3 sm:px-button-px py-3 md:py-button-py bg-background-button rounded-button flex justify-center items-center gap-2 sm:gap-3 text-text-primary-lightbg hover:opacity-90 transition-opacity ${className}`}
       variants={buttonVariants}
       initial="initial"
       animate="animate"
