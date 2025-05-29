@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import readyIcon from '@/assets/ready.png';
-import setIcon from '@/assets/set.png';
-import goIcon from '@/assets/go.png';
+import readyIcon from '@/assets/ready.svg';
+import setIcon from '@/assets/set.svg';
+import goIcon from '@/assets/go.svg';
 
 const HowItWorksSection: FC = () => {
   return (
