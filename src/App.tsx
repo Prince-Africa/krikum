@@ -7,8 +7,8 @@ import DownloadAppCTA from './components/DownloadAppCTA';
 
 const App: FC = () => {
   // Store links and contact information
-  const appStoreLink = "#"; // Replace with actual App Store link
-  const playStoreLink = "#"; // Replace with actual Play Store link
+  const appStoreLink = "/download"; // Smart redirect to appropriate app store
+  const playStoreLink = "/download"; // Smart redirect to appropriate app store
   const whatsappLink = "https://wa.me/2347035481156"; // WhatsApp link with business phone number
 
   return (
