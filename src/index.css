@@ -4,18 +4,18 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Eras ITC';
+  font-family: 'Eras Demi ITC';
   src: local('Eras Demi ITC'),
        local('ErasDemiITC'),
-       url('/fonts/ERASDEMI.TTF') format('truetype');
-  font-weight: bold;
+       url('/fonts/Erasdemi.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 /* Define a custom property for the heading font stack */
 :root {
-  --font-heading: 'Eras Demi', 'Arial Black', 'Helvetica Black', 'Arial Bold', sans-serif;
+  --font-heading: 'Eras Demi ITC', 'Arial Black', 'Helvetica Black', 'Arial Bold', sans-serif;
 }
 
 @theme {
