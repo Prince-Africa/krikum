@@ -6,7 +6,7 @@ import goIcon from '@/assets/go.svg';
 const HowItWorksSection: FC = () => {
   return (
     <div className="w-full px-4 md:px-section-px py-10 md:py-section-py flex flex-col justify-start items-center gap-6 md:gap-10 overflow-hidden z-10">
-      <div className="w-full max-w-3xl text-center text-text-primary-darkbg text-3xl md:text-4xl font-heading leading-tight mb-6 md:mb-16 ">
+      <div className="w-full max-w-3xl text-center text-Colours-Primary text-3xl md:text-5xl font-normal leading-tight mb-6 md:mb-16" style={{ fontFamily: 'var(--font-heading)' }}>
         How it works
       </div>
 

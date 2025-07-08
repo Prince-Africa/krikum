@@ -9,7 +9,7 @@ const Footer: FC<FooterProps> = ({ onTermsClick }) => {
     <footer className="w-full bg-black px-4 md:px-section-px py-6">
       <div className="w-full max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
         <p className="text-Colours-Primary/60 text-sm" style={{ fontFamily: 'var(--font-body)' }}>
-          © {new Date().getFullYear()} Item7go Ventures
+          © {new Date().getFullYear()} Item7go
         </p>
         <div className="flex gap-6">
           <button

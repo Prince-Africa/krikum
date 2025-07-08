@@ -88,7 +88,7 @@ const TermsAndConditionsPage: FC<TermsAndConditionsPageProps> = ({ onBack }) => 
       title: "12. Contact Us",
       content: "If you have questions or want to exercise your rights, contact:",
       contactInfo: {
-        company: "Item7go Ventures",
+        company: "Item7go ",
         email: "prince.africa@item7go.com",
         phone: "+234 7047004706",
         website: "https://item7go.com"
