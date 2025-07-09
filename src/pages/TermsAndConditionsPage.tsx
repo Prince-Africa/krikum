@@ -3,103 +3,73 @@ import Navbar from '../components/Navbar';
 
 interface TermsAndConditionsPageProps {
   onBack?: () => void;
+  onPrivacyClick?: () => void;
 }
 
-const TermsAndConditionsPage: FC<TermsAndConditionsPageProps> = ({ onBack }) => {
+const TermsAndConditionsPage: FC<TermsAndConditionsPageProps> = ({ onBack, onPrivacyClick }) => {
   const whatsappLink = "https://wa.me/2347035481156";
 
   const sections = [
     {
-      title: "1. Who We Are",
-      content: "Item7go App is operated by PrinceAfriqa, a technology company registered in Nigeria. This Privacy Policy applies to all users of our mobile app, platform, and related services (collectively, \"Services\"). By downloading, registering with, or using Item7go App, you consent to the practices described in this Privacy Policy. If you do not agree with our policies, please do not use the app or our services."
+      content: "Welcome to item7(go). By using our services, you agree to the following terms and conditions. Please read them carefully before using our app. By accessing our app, you agree to be bound by these terms and conditions and our privacy policy."
     },
     {
-      title: "2. What is Personal Data?",
-      content: "Personal data refers to any information that can identify an individual directly or indirectly, such as your name, phone number, email address, location data, or audio instructions you submit with your order."
+      title: "Account Creation and Security",
+      content: "You will need to create an account to access the features of the app. You are responsible for maintaining the confidentiality of your login details. Provide the necessary, accurate, complete and current information so as to get your meals. The QR code is given to you and you should protect it."
     },
     {
-      title: "3. Legal Bases for Processing Your Data",
-      content: "We collect and process your personal data under the following lawful bases:",
+      title: "Order Placement and Pickup",
+      content: "Meals must be picked up at designated pick up stations. Once an order is placed, it can not be modified.",
       list: [
-        "Contract: To fulfill your order requests and manage transactions.",
-        "Legitimate Interest: To improve user experience, maintain platform security, and communicate relevant updates.",
-        "Consent: Where explicitly required, such as for voice note recordings, location access, or promotional notifications."
+        "All orders not picked up within six (6) hours of the scheduled pick up time may be eligible for cancellation.",
+        "All requests remaining unclaimed by 11:58 PM will be automatically canceled and returned to the user wallet.",
+        "You must pick up your order within the stated time as your meal is best served hot. Orders not picked up within the allowed time will be discarded without refund."
       ]
     },
     {
-      title: "4. Personal Data We Collect and Why",
-      list: [
-        "Account and Order Information: Name, email, phone number, food orders, payment details, pickup preferences, and audio (voice notes).",
-        "Device and Usage Data: Device type, app version, IP address, and usage analytics.",
-        "Location Data: If enabled, we use it to find nearby stores and optimize logistics and pricing.",
-        "Communication Data: Feedback, inquiries, and support requests."
-      ]
+      title: "Payment Methods",
+      content: "All payments must be made through the app using the available payment methods which are: through the item7(go) user wallet, internet banking (bank transfer or card)."
     },
     {
-      title: "5. How We Use Your Information",
-      content: "We use your data to:",
-      list: [
-        "Process and manage food orders",
-        "Communicate with you about orders and updates",
-        "Improve app functionality and personalize experience",
-        "Prevent fraud and ensure platform security",
-        "Comply with legal obligations"
-      ]
+      title: "QR Code and Proof of Purchase",
+      content: "Ensure you bring proof of purchase which is the QR code. We are not responsible for any unauthorized use of your QR code. Please keep your QR code safe and only share it with trusted individuals to avoid unscrupulous people having access to (or claiming) your order."
     },
     {
-      title: "6. Who We Share Your Information With",
-      content: "We only share your information with:",
-      list: [
-        "Partner restaurants and vendors to fulfill orders",
-        "Payment processors to handle transactions",
-        "Third-party providers for analytics, hosting, and support (under strict confidentiality)"
-      ]
+      title: "Refund Policy",
+      content: "Payment made will be refunded to your item7(go) user wallet if you have not scanned the QR code. Any errors from the user, for example late pick up or wrong pickup station will not be eligible for refund."
     },
     {
-      title: "7. Data Storage and Transfers",
-      content: "Your data is stored securely on cloud servers managed by reputable providers. When data is stored outside Nigeria, we ensure equivalent data protection standards."
+      title: "Food Safety and Allergies",
+      content: "item7(go) is responsible for the safety, quality and legality of the food we provide but we are not responsible for food allergies or dieting restrictions. Users should check the menu before making a request."
     },
     {
-      title: "8. How Long We Keep Your Information",
-      content: "We retain your data as long as necessary to provide services, meet legal obligations, and resolve disputes. Data is securely deleted or anonymized once no longer needed."
+      title: "Prohibited Activities",
+      content: "Users agree not to use the app for unlawful or fraudulent activities. We reserve the right to refuse or cancel any request for reasons including but not limited to product availability, errors in pricing or suspected fraud or any other reason that we believe will be detrimental to our values."
     },
     {
-      title: "9. Your Rights",
-      content: "You have the right to:",
-      list: [
-        "Access – Request a copy of your personal info",
-        "Rectification – Correct inaccuracies",
-        "Erasure – Delete your data (within legal limits)",
-        "Restriction – Limit how your data is used",
-        "Objection – Opt out of communications",
-        "Portability – Transfer your data elsewhere"
-      ],
-      footer: "Contact us below to exercise your rights."
+      title: "Intellectual Property",
+      content: "All content on the app, including logos, text and software, is owned by item7(go) and protected by intellectual property laws."
     },
     {
-      title: "10. Cookies and Analytics",
-      content: "We use tools like Google Analytics for Firebase to collect anonymized usage data and improve the app. We do not use traditional web cookies."
+      title: "Privacy",
+      content: "Your privacy is important to us please refer to our privacy policy for information on how we collect, use and disclose your personal data.",
+      hasPrivacyLink: true
     },
     {
-      title: "11. Children's Privacy",
-      content: "Item7go App does not knowingly collect data from children under 13. If such data is discovered, it will be promptly deleted."
+      title: "Updates to Terms",
+      content: "We may update these terms and conditions from time to time."
     },
     {
-      title: "12. Contact Us",
-      content: "If you have questions or want to exercise your rights, contact:",
+      content: "For any questions regarding the terms and conditions, contact:",
       contactInfo: {
-        company: "Item7go ",
-        email: "prince.africa@item7go.com",
-        phone: "+234 7047004706",
-        website: "https://item7go.com"
-      },
-      footer: "We respond to all legitimate requests within 30 days. If unsatisfied, you may contact your local data protection authority."
+        phones: ["+2348060278109", "+2348033458479", "+2347035481156"]
+      }
     }
   ];
 
   return (
     <div className="w-full min-h-screen px-4 md:px-section-px pt-16 md:pt-28 pb-8 md:pb-section-py bg-black flex flex-col justify-start items-center gap-8 md:gap-12 overflow-x-hidden">
-      <Navbar whatsappLink={whatsappLink} />
+      <Navbar whatsappLink={whatsappLink} isOnHomepage={false} />
       
       {/* Header */}
       <div className="w-full max-w-4xl flex flex-col justify-start items-center gap-4 md:gap-6 text-center">
@@ -113,10 +83,10 @@ const TermsAndConditionsPage: FC<TermsAndConditionsPageProps> = ({ onBack }) => 
           </button>
         )}
         <h1 className="text-Colours-Primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-          Privacy Policy
+          Terms and Conditions
         </h1>
         <p className="text-Colours-Primary text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-3xl" style={{ fontFamily: 'var(--font-body)' }}>
-          Learn how we collect, use, and protect your personal information
+          Please read these terms carefully before using our services
         </p>
       </div>
 
@@ -125,15 +95,31 @@ const TermsAndConditionsPage: FC<TermsAndConditionsPageProps> = ({ onBack }) => 
         {sections.map((section, index) => (
           <div key={index} className="w-full flex flex-col gap-3 md:gap-4">
             {/* Section Title */}
-            <h2 className="text-Colours-Primary text-lg sm:text-xl md:text-2xl font-normal leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-              {section.title}
-            </h2>
+            {section.title && (
+              <h2 className="text-Colours-Primary text-lg sm:text-xl md:text-2xl font-normal leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+                {section.title}
+              </h2>
+            )}
             
             {/* Section Content */}
             <div className="flex flex-col gap-3">
-              {section.content && (
+              {section.content && !section.hasPrivacyLink && (
                 <p className="text-Colours-Primary text-sm sm:text-base font-normal leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
                   {section.content}
+                </p>
+              )}
+              
+              {section.hasPrivacyLink && (
+                <p className="text-Colours-Primary text-sm sm:text-base font-normal leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
+                  Your privacy is important to us please refer to our{' '}
+                  <button
+                    onClick={onPrivacyClick}
+                    className="text-Colours-Primary underline hover:text-Colours-Primary/80 transition-colors cursor-pointer"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                  >
+                    privacy policy
+                  </button>
+                  {' '}for information on how we collect, use and disclose your personal data.
                 </p>
               )}
               
@@ -147,34 +133,21 @@ const TermsAndConditionsPage: FC<TermsAndConditionsPageProps> = ({ onBack }) => 
                 </ul>
               )}
               
-              {section.contactInfo && (
-                <div className="flex flex-col gap-2 ml-4 md:ml-6">
-                  <p className="text-Colours-Primary text-sm sm:text-base font-normal leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-                    <strong>Company:</strong> {section.contactInfo.company}
-                  </p>
-                  <p className="text-Colours-Primary text-sm sm:text-base font-normal leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-                    <strong>Email:</strong> {section.contactInfo.email}
-                  </p>
-                  <p className="text-Colours-Primary text-sm sm:text-base font-normal leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-                    <strong>Phone:</strong> {section.contactInfo.phone}
-                  </p>
-                  <p className="text-Colours-Primary text-sm sm:text-base font-normal leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-                    <strong>Website:</strong> <a href={section.contactInfo.website} className="underline hover:text-Colours-Primary/80 transition-colors" target="_blank" rel="noopener noreferrer">{section.contactInfo.website}</a>
-                  </p>
+              {section.contactInfo && section.contactInfo.phones && (
+                <div className="flex flex-col gap-2">
+                  {section.contactInfo.phones.map((phone, phoneIndex) => (
+                    <p key={phoneIndex} className="text-Colours-Primary text-sm sm:text-base font-normal leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
+                      <a href={`tel:${phone}`} className="hover:text-Colours-Primary/80 transition-colors">{phone}</a>
+                    </p>
+                  ))}
                 </div>
-              )}
-              
-              {section.footer && (
-                <p className="text-Colours-Primary text-sm sm:text-base font-normal leading-relaxed italic" style={{ fontFamily: 'var(--font-body)' }}>
-                  {section.footer}
-                </p>
               )}
             </div>
           </div>
         ))}
         
         {/* Last Updated */}
-        <div className="w-full pt-6 md:pt-8 border-t border-Colours-Primary/20">
+        <div className="w-full pt-4">
           <p className="text-Colours-Primary/60 text-xs sm:text-sm font-normal leading-relaxed text-center" style={{ fontFamily: 'var(--font-body)' }}>
             Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
