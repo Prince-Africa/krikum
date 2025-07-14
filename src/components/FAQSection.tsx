@@ -28,7 +28,8 @@ After selecting everything you want, you can add your meal to cart and check out
 
 • +2348060278109
 • +2348033458479
-• +2347035481156`
+• +2347035481156`,
+      hasWhatsAppNumbers: true
     },
     {
       question: "Can I order for someone else?",
@@ -99,12 +100,36 @@ The QR code that is unique to you can be given to the person you want to order f
                 <div
                   className={`px-3 sm:px-4 md:px-6 transition-all duration-300 ease-in-out ${
                     isOpen 
-                      ? 'max-h-96 pb-3 sm:pb-4 md:pb-5 opacity-100' 
+                      ? 'pb-3 sm:pb-4 md:pb-5 opacity-100' 
                       : 'max-h-0 pb-0 opacity-0'
                   } overflow-hidden`}
                 >
                   <div className="text-Colours-Primary/80 text-sm sm:text-base font-normal leading-relaxed whitespace-pre-line border-t border-Colours-Primary/20 pt-3 sm:pt-4 md:pt-5" style={{ fontFamily: 'var(--font-body)' }}>
-                    {faq.answer}
+                    {faq.hasWhatsAppNumbers ? (
+                      <div>
+                        <p>Yes we do! Use the following WhatsApp numbers to speak to our customer support:</p>
+                        <div className="mt-2 space-y-1">
+                          {[
+                            { number: "+2348060278109", label: "Support Line 1" },
+                            { number: "+2348033458479", label: "Support Line 2" },
+                            { number: "+2347035481156", label: "Support Line 3" }
+                          ].map((item, index) => (
+                            <button
+                              key={index}
+                              onClick={() => {
+                                const whatsappUrl = `https://wa.me/${item.number.replace('+', '')}`;
+                                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+                              }}
+                              className="block text-left text-Colours-Primary hover:text-Colours-Primary/60 transition-colors cursor-pointer"
+                            >
+                              • {item.number} ({item.label})
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      faq.answer
+                    )}
                   </div>
                 </div>
               </div>

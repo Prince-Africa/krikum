@@ -1,13 +1,9 @@
 import type { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
-interface PrivacyPageProps {
-  onBack?: () => void;
-}
-
-const PrivacyPage: FC<PrivacyPageProps> = ({ onBack }) => {
-  const whatsappLink = "https://wa.me/2347035481156";
-
+const PrivacyPage: FC = () => {
+  const navigate = useNavigate();
   const sections = [
     {
       title: "1. Who We Are",
@@ -99,19 +95,17 @@ const PrivacyPage: FC<PrivacyPageProps> = ({ onBack }) => {
 
   return (
     <div className="w-full min-h-screen px-4 md:px-section-px pt-16 md:pt-28 pb-8 md:pb-section-py bg-black flex flex-col justify-start items-center gap-8 md:gap-12 overflow-x-hidden">
-      <Navbar whatsappLink={whatsappLink} isOnHomepage={false} />
+      <Navbar isOnHomepage={false} />
       
       {/* Header */}
       <div className="w-full max-w-4xl flex flex-col justify-start items-center gap-4 md:gap-6 text-center">
-        {onBack && (
-          <button
-            onClick={onBack}
-            className="self-start text-Colours-Primary text-sm md:text-base font-normal hover:text-Colours-Primary/80 transition-colors mb-4"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            ← Back to Home
-          </button>
-        )}
+        <button
+          onClick={() => navigate('/')}
+          className="self-start text-Colours-Primary text-sm md:text-base font-normal hover:text-Colours-Primary/80 transition-colors mb-4"
+          style={{ fontFamily: 'var(--font-body)' }}
+        >
+          ← Back to Home
+        </button>
         <h1 className="text-Colours-Primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
           Privacy Policy
         </h1>

@@ -1,11 +1,8 @@
 import type { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-interface FooterProps {
-  onTermsClick?: () => void;
-  onPrivacyClick?: () => void;
-}
-
-const Footer: FC<FooterProps> = ({ onTermsClick, onPrivacyClick }) => {
+const Footer: FC = () => {
+  const navigate = useNavigate();
   return (
     <footer className="w-full bg-black px-4 md:px-section-px py-6">
       <div className="w-full max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
@@ -14,14 +11,14 @@ const Footer: FC<FooterProps> = ({ onTermsClick, onPrivacyClick }) => {
         </p>
         <div className="flex gap-6">
           <button
-            onClick={onTermsClick}
+            onClick={() => navigate('/terms')}
             className="text-Colours-Primary text-sm hover:text-Colours-Primary/80 transition-colors cursor-pointer"
             style={{ fontFamily: 'var(--font-body)' }}
           >
             Terms & Conditions
           </button>
           <button
-            onClick={onPrivacyClick}
+            onClick={() => navigate('/privacy')}
             className="text-Colours-Primary text-sm hover:text-Colours-Primary/80 transition-colors cursor-pointer"
             style={{ fontFamily: 'var(--font-body)' }}
           >
