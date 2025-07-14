@@ -84,7 +84,7 @@ const WhatsAppDropdown: FC = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-64 bg-black border-2 border-white rounded-[20px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden z-[9999]"
+              className="fixed top-20 left-1/2 transform -translate-x-1/2 w-64 bg-black border-2 border-white rounded-[20px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden z-[9999]"
             >
               {whatsappNumbers.map((item, index) => (
                 <motion.button
@@ -157,7 +157,7 @@ const WhatsAppDropdown: FC = () => {
                     className="w-5 h-5 object-contain"
                   />
                   <div className="flex flex-col">
-                    <span className="text-sm font-semibold">{item.label}</span>
+                    <span className="text-sm font-normal">{item.label}</span>
                     <span className="text-xs opacity-80">{item.number}</span>
                   </div>
                 </motion.button>
