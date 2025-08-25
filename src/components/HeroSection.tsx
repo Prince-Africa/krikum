@@ -101,7 +101,7 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
             animate="visible"
             className="self-stretch text-center text-text-primary-darkbg text-xl md:text-lg font-body leading-relaxed md:leading-snug px-2 md:px-0"
           >
-            Avoid the wait for pickup, <br className="hidden sm:block"/>Order through the app today.
+            Avoid the wait for pickup, <br/>Order through the app today.
           </motion.div>
           
           <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
