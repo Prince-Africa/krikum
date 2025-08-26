@@ -1,8 +1,7 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import StoreButton from './StoreButton';
-import item7Text from '@/assets/item7_text.png';
-import goText from '@/assets/go_text.png';
+import item7_navbar_logo from '@/assets/item7_navbar_logo.png';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import iphoneMockup from '@/assets/iphone mockup.png';
@@ -26,8 +25,8 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" }
     }
@@ -35,8 +34,8 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
 
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.9 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       transition: { duration: 0.5, ease: "easeOut" }
     }
@@ -44,8 +43,8 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
 
   const subtitleVariants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.6, delay: 1.2, ease: "easeOut" }
     }
@@ -64,46 +63,44 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
             className="w-full max-w-3xl text-center flex flex-col items-center justify-center gap-3 md:gap-1.5"
           >
             <div className="flex items-center justify-center gap-4">
-              <motion.span 
+              <motion.span
                 variants={itemVariants}
-                style={{ fontFamily: 'Eras ITC, Arial Black, sans-serif' }}
-                className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-bold leading-tight tracking-[0%] text-center whitespace-nowrap"
+                className="text-text-primary-darkbg text-4xl md:text-2xl lg:text-hero font-hero leading-tight tracking-[0%] text-center whitespace-nowrap"
               >
-                Get Your
+                Your
               </motion.span>
-              <motion.img 
+              <motion.img
                 variants={imageVariants}
-                src={item7Text} 
-                alt="Item 7" 
+                src={item7_navbar_logo}
+                alt="Item 7"
                 className="h-12 md:h-10 lg:h-14 w-auto"
               />
             </div>
             <div className="flex items-center justify-center gap-4">
-              <motion.span 
+              <motion.span
                 variants={itemVariants}
-                style={{ fontFamily: 'Eras ITC, Arial Black, sans-serif' }}
-                className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-bold leading-tight tracking-[0%] text-center whitespace-nowrap"
+                className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-medium leading-tight tracking-[0%] text-center whitespace-nowrap"
               >
-                to
+
               </motion.span>
-              <motion.img 
-                variants={imageVariants}
-                src={goText} 
-                alt="Go" 
-                className="h-12 md:h-10 lg:h-14 w-auto"
-              />
+              <motion.span
+                variants={itemVariants}
+                className="text-text-primary-darkbg text-4xl md:text-2xl lg:text-hero font-hero leading-tight tracking-[0%] text-center whitespace-nowrap"
+              >
+                Ready on Arrival
+              </motion.span>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={subtitleVariants}
             initial="hidden"
             animate="visible"
-            className="self-stretch text-center text-text-primary-darkbg text-xl md:text-lg font-body leading-relaxed md:leading-snug px-2 md:px-0"
+            className="self-stretch text-center text-text-primary-darkbg text-xl md:text-lg font-medium leading-relaxed md:leading-snug px-2 md:px-0"
           >
-            Avoid the wait for pickup, <br/>Order through the app today.
+            Feel the item 7 GO experience this time without the wait.<br /> Order through our mobile app today
           </motion.div>
-          
+
           <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
             <StoreButton
               href={appStoreLink}
@@ -121,10 +118,10 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
         </div>
       </div>
 
-      <img 
-        className="w-[85%] md:w-auto scale-[1.15] mt-16 md:mt-24 z-0" 
-        src={iphoneMockup} 
-        alt="iPhone App Preview" 
+      <img
+        className="w-[85%] md:w-auto scale-[1.15] mt-16 md:mt-24 z-0"
+        src={iphoneMockup}
+        alt="iPhone App Preview"
       />
     </>
   );
