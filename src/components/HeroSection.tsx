@@ -6,12 +6,9 @@ import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import iphoneMockup from '@/assets/iphone mockup.png';
 
-interface HeroSectionProps {
-  appStoreLink: string;
-  playStoreLink: string;
-}
+interface HeroSectionProps { }
 
-const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
+const HeroSection: FC<HeroSectionProps> = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -103,16 +100,18 @@ const HeroSection: FC<HeroSectionProps> = ({ appStoreLink, playStoreLink }) => {
 
           <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
             <StoreButton
-              href={appStoreLink}
+              href=""
               icon={appleIcon}
               storeName="App Store"
               className="flex-1"
+              disabled={true}
             />
             <StoreButton
-              href={playStoreLink}
+              href=""
               icon={playstoreIcon}
               storeName="Play Store"
               className="flex-1"
+              disabled={true}
             />
           </div>
         </div>

@@ -8,18 +8,14 @@ import DownloadAppCTA from './components/DownloadAppCTA';
 import Footer from './components/Footer';
 
 const App: FC = () => {
-  // Store links and contact information
-  const appStoreLink = "/download"; // Smart redirect to appropriate app store
-  const playStoreLink = "/download"; // Smart redirect to appropriate app store
-
   return (
     <>
       <div className="w-full min-h-screen px-4 md:px-section-px pt-16 md:pt-24 pb-8 md:pb-section-py relative flex flex-col justify-start items-center gap-12 md:gap-gutter overflow-x-hidden">
         <Navbar isOnHomepage={true} />
-        <HeroSection appStoreLink={appStoreLink} playStoreLink={playStoreLink} />
+        <HeroSection />
         <HowItWorksSection />
         <FAQSection />
-        <DownloadAppCTA appStoreLink={appStoreLink} playStoreLink={playStoreLink} />
+        <DownloadAppCTA />
       </div>
       <Footer />
     </>
