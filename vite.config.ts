@@ -7,7 +7,6 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 export default defineConfig({
-  base: 'https://staging.item7go.com/',
   plugins: [
     tailwindcss(),
   ],
@@ -23,7 +22,7 @@ export default defineConfig({
           if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
           const extType = assetInfo.name.split('.').at(1);
           if (!extType) return 'assets/[name]-[hash][extname]';
-          
+
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             return `assets/img/[name]-[hash][extname]`;
           }
