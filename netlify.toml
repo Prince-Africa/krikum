@@ -6,5 +6,5 @@
   from = "/*"
   to = "https://item7go.com/:splat"
   status = 301
-  force = true
+  force = true
 
