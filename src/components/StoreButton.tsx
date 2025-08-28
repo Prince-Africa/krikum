@@ -39,8 +39,8 @@ const StoreButton: FC<StoreButtonProps> = ({ href, icon, storeName, className = 
   const buttonContent = (
     <motion.div
       className={`min-w-[150px] px-3 sm:px-button-px py-3 md:py-button-py bg-background-button rounded-button flex justify-center items-center gap-2 sm:gap-3 text-text-primary-lightbg transition-all cursor-pointer ${disabled
-          ? 'opacity-50 cursor-not-allowed bg-gray-400'
-          : 'hover:opacity-90'
+        ? 'opacity-50 cursor-not-allowed bg-gray-400'
+        : 'hover:opacity-90'
         } ${className}`}
       variants={buttonVariants}
       initial="initial"
