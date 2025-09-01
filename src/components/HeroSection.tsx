@@ -97,7 +97,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
             animate="visible"
             className="self-stretch text-center text-text-primary-darkbg text-xl md:text-lg font-medium leading-relaxed md:leading-snug px-2 md:px-0"
           >
-            Feel the item 7 GO experience this time without the wait.<br /> Order through our mobile app today
+            Feel the Item7GO experience without the wait.<br /> Order through our mobile app today
           </motion.div>
 
           <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
