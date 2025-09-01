@@ -7,9 +7,10 @@ interface StoreButtonProps {
   storeName: 'App Store' | 'Play Store';
   className?: string;
   disabled?: boolean;
+  onClick?: () => void;
 }
 
-const StoreButton: FC<StoreButtonProps> = ({ href, icon, storeName, className = '', disabled = false }) => {
+const StoreButton: FC<StoreButtonProps> = ({ href, icon, storeName, className = '', disabled = false, onClick }) => {
   const buttonVariants = {
     initial: {
       opacity: 0,
@@ -47,6 +48,7 @@ const StoreButton: FC<StoreButtonProps> = ({ href, icon, storeName, className = 
       animate="animate"
       whileHover={disabled ? undefined : "hover"}
       whileTap={disabled ? undefined : "tap"}
+      onClick={onClick}
     >
       <img
         src={icon}

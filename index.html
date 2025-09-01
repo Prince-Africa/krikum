@@ -1,13 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/src/assets/Item7go_favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Item7Go Website</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/src/assets/Item7go_favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Item7Go Website</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F72LXWKV8K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-F72LXWKV8K', {
+      // Enhanced configuration for better tracking
+      anonymize_ip: true,
+      allow_google_signals: true,
+      allow_ad_personalization_signals: true,
+      page_title: document.title,
+      page_location: window.location.href,
+      custom_map: {
+        'custom_parameter_1': 'device_type',
+        'custom_parameter_2': 'user_location',
+        'custom_parameter_3': 'screen_resolution',
+        'custom_parameter_4': 'browser_info'
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

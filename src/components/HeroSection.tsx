@@ -5,10 +5,12 @@ import item7_navbar_logo from '@/assets/item7_navbar_logo.png';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import iphoneMockup from '@/assets/iphone mockup.png';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 interface HeroSectionProps { }
 
 const HeroSection: FC<HeroSectionProps> = () => {
+  const { trackAppDownload } = useAnalytics();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -105,6 +107,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
               storeName="App Store"
               className="flex-1"
               disabled={true}
+              onClick={() => trackAppDownload('app_store')}
             />
             <StoreButton
               href=""
@@ -112,6 +115,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
               storeName="Play Store"
               className="flex-1"
               disabled={true}
+              onClick={() => trackAppDownload('play_store')}
             />
           </div>
         </div>
