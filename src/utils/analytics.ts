@@ -171,7 +171,7 @@ export class Analytics {
 
     public trackPageView(pageTitle?: string, pageLocation?: string): void {
         if (typeof window.gtag !== 'undefined') {
-            window.gtag('config', 'G-PP6MJSNM27', {
+            window.gtag('config', 'G-F72LXWKV8K', {
                 page_title: pageTitle || document.title,
                 page_location: pageLocation || window.location.href
             });
