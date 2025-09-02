@@ -14,7 +14,23 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
+    // Configure both tracking IDs
     gtag('config', 'G-F72LXWKV8K', {
+      // Enhanced configuration for better tracking
+      anonymize_ip: true,
+      allow_google_signals: true,
+      allow_ad_personalization_signals: true,
+      page_title: document.title,
+      page_location: window.location.href,
+      custom_map: {
+        'custom_parameter_1': 'device_type',
+        'custom_parameter_2': 'user_location',
+        'custom_parameter_3': 'screen_resolution',
+        'custom_parameter_4': 'browser_info'
+      }
+    });
+
+    gtag('config', 'G-VNDEBKWSMF', {
       // Enhanced configuration for better tracking
       anonymize_ip: true,
       allow_google_signals: true,
