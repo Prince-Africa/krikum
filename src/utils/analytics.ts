@@ -176,7 +176,7 @@ export class Analytics {
                 page_title: pageTitle || document.title,
                 page_location: pageLocation || window.location.href
             });
-            window.gtag('config', 'G-VNDEBKWSMF', {
+            window.gtag('config', 'G-PP6MJSNM27', {
                 page_title: pageTitle || document.title,
                 page_location: pageLocation || window.location.href
             });
