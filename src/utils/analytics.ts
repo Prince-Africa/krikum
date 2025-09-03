@@ -8,6 +8,7 @@ declare global {
 
 export interface UserDeviceInfo {
     deviceType: 'mobile' | 'tablet' | 'desktop';
+    specificDevice: string;
     browser: string;
     browserVersion: string;
     os: string;
@@ -59,10 +60,37 @@ export class Analytics {
             height: window.innerHeight
         };
 
-        // Determine device type
+        // Determine device type and specific mobile device
         let deviceType: 'mobile' | 'tablet' | 'desktop' = 'desktop';
+        let specificDevice = 'Unknown';
+
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
             deviceType = viewport.width < 768 ? 'mobile' : 'tablet';
+
+            // Detect specific mobile devices
+            if (/iPhone/i.test(userAgent)) {
+                specificDevice = 'iPhone';
+                // Detect iPhone model
+                if (/iPhone OS 17_/i.test(userAgent)) specificDevice = 'iPhone 15';
+                else if (/iPhone OS 16_/i.test(userAgent)) specificDevice = 'iPhone 14';
+                else if (/iPhone OS 15_/i.test(userAgent)) specificDevice = 'iPhone 13';
+                else if (/iPhone OS 14_/i.test(userAgent)) specificDevice = 'iPhone 12';
+                else if (/iPhone OS 13_/i.test(userAgent)) specificDevice = 'iPhone 11';
+                else specificDevice = 'iPhone (older)';
+            } else if (/iPad/i.test(userAgent)) {
+                specificDevice = 'iPad';
+            } else if (/Android/i.test(userAgent)) {
+                specificDevice = 'Android';
+                // Detect Android device model if available
+                const androidModel = userAgent.match(/Android.*?;\s*([^)]+)/i);
+                if (androidModel) {
+                    specificDevice = `Android ${androidModel[1]}`;
+                }
+            } else if (/BlackBerry/i.test(userAgent)) {
+                specificDevice = 'BlackBerry';
+            } else if (/Windows Phone/i.test(userAgent)) {
+                specificDevice = 'Windows Phone';
+            }
         }
 
         // Browser detection
@@ -114,6 +142,7 @@ export class Analytics {
 
         this.deviceInfo = {
             deviceType,
+            specificDevice,
             browser,
             browserVersion,
             os,
@@ -130,6 +159,7 @@ export class Analytics {
         // Send device info to GA
         this.sendCustomEvent('device_info', {
             device_type: deviceType,
+            specific_device: specificDevice,
             browser: `${browser} ${browserVersion}`,
             os: `${os} ${osVersion}`,
             screen_resolution: this.deviceInfo.screenResolution,
