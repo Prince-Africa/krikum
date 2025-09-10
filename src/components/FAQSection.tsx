@@ -6,22 +6,22 @@ const FAQSection: FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
-    {
-      question: "How do I place an order?",
-      answer: `Click on "menu" and select the food you want to order. For example: party rice with chicken.
+    //     {
+    //       question: "How do I place an order?",
+    //       answer: `Click on "menu" and select the food you want to order. For example: party rice with chicken.
 
-• Select the type of rice you want (mixed, jollof, fried rice)
-• Choose between the medium size pack and the big size pack
-• Pick an extra of your choice (plantain, coleslaw e.t.c)
-• You can add drinks to step down your delicious party rice.
+    // • Select the type of rice you want (mixed, jollof, fried rice)
+    // • Choose between the medium size pack and the big size pack
+    // • Pick an extra of your choice (plantain, coleslaw e.t.c)
+    // • You can add drinks to step down your delicious party rice.
 
-We also have an "add audio feature" that allows you to send extra messages to us. For example: "I do not want mayonnaise in my coleslaw" Talk to us.
+    // We also have an "add audio feature" that allows you to send extra messages to us. For example: "I do not want mayonnaise in my coleslaw" Talk to us.
 
-After selecting everything you want, you can add your meal to cart and check out later or click on "buy now" to proceed with your request:
-• Choose your pick up time and note that your pick up time has to start from 20 minutes into the future.
-• Select an outlet close to you and click on "buy now"
-• Choose a payment method and make your payment.`
-    },
+    // After selecting everything you want, you can add your meal to cart and check out later or click on "buy now" to proceed with your request:
+    // • Choose your pick up time and note that your pick up time has to start from 20 minutes into the future.
+    // • Select an outlet close to you and click on "buy now"
+    // • Choose a payment method and make your payment.`
+    //     },
     {
       question: "Do you have a customer support line?",
       answer: `Yes we do! Use the following WhatsApp numbers to speak to our customer support:
@@ -33,9 +33,7 @@ After selecting everything you want, you can add your meal to cart and check out
     },
     {
       question: "Can I order for someone else?",
-      answer: `Yes you can! Spread the love to everyone.
-
-The QR code that is unique to you can be given to the person you want to order for. Please protect the QR code.`
+      answer: `Yes you can! Spread the love to everyone.`
     },
     {
       question: "What if I am running late to pick up my order?",
@@ -70,7 +68,7 @@ The QR code that is unique to you can be given to the person you want to order f
             const isFirst = index === 0;
             const isLast = index === faqs.length - 1;
             const isOpen = openIndex === index;
-            
+
             let roundedClasses = "";
             if (isFirst) {
               roundedClasses = "rounded-tl-[20px] sm:rounded-tl-[32px] md:rounded-tl-[48px] rounded-tr-[20px] sm:rounded-tr-[32px] md:rounded-tr-[48px]";
@@ -98,11 +96,10 @@ The QR code that is unique to you can be given to the person you want to order f
 
                 {/* Answer Content */}
                 <div
-                  className={`px-3 sm:px-4 md:px-6 transition-all duration-300 ease-in-out ${
-                    isOpen 
-                      ? 'pb-3 sm:pb-4 md:pb-5 opacity-100' 
-                      : 'max-h-0 pb-0 opacity-0'
-                  } overflow-hidden`}
+                  className={`px-3 sm:px-4 md:px-6 transition-all duration-300 ease-in-out ${isOpen
+                    ? 'pb-3 sm:pb-4 md:pb-5 opacity-100'
+                    : 'max-h-0 pb-0 opacity-0'
+                    } overflow-hidden`}
                 >
                   <div className="text-Colours-Primary/80 text-sm sm:text-base font-normal leading-relaxed whitespace-pre-line border-t border-Colours-Primary/20 pt-3 sm:pt-4 md:pt-5" style={{ fontFamily: 'var(--font-body)' }}>
                     {faq.hasWhatsAppNumbers ? (
