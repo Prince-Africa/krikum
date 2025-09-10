@@ -34,6 +34,7 @@ const FAQSection: FC = () => {
     {
       question: "Can I order for someone else?",
       answer: `Yes you can! Spread the love to everyone.`
+      //The QR code that is unique to you can be given to the person you want to order for. Please protect the QR code.
     },
     {
       question: "What if I am running late to pick up my order?",
