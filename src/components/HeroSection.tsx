@@ -1,16 +1,17 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import StoreButton from './StoreButton';
+import { useState } from 'react';
+import ComingSoonPopup from './ComingSoonPopup';
 import item7_navbar_logo from '@/assets/item7_navbar_logo.png';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import iphoneMockup from '@/assets/iphone mockup.png';
-import { useAnalytics } from '../hooks/useAnalytics';
+
 
 interface HeroSectionProps { }
 
 const HeroSection: FC<HeroSectionProps> = () => {
-  const { trackAppDownload } = useAnalytics();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,6 +50,12 @@ const HeroSection: FC<HeroSectionProps> = () => {
     }
   };
 
+  const [open, setOpen] = useState(false);
+
+  function openPopup() {
+    setOpen(true);
+  }
+
   return (
     <>
       <div className="w-[548px] h-[491px] left-[calc(50%-200px)] top-[450px] absolute blur-accent-strong opacity-60 pointer-events-none" />
@@ -80,7 +87,6 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 variants={itemVariants}
                 className="text-text-primary-darkbg text-4xl md:text-3xl lg:text-hero font-medium leading-tight tracking-[0%] text-center whitespace-nowrap"
               >
-
               </motion.span>
               <motion.span
                 variants={itemVariants}
@@ -106,18 +112,19 @@ const HeroSection: FC<HeroSectionProps> = () => {
               icon={appleIcon}
               storeName="App Store"
               className="flex-1"
-              disabled={true}
-              onClick={() => trackAppDownload('app_store')}
+              disabled={false}
+              onClick={openPopup}
             />
             <StoreButton
               href=""
               icon={playstoreIcon}
               storeName="Play Store"
               className="flex-1"
-              disabled={true}
-              onClick={() => trackAppDownload('play_store')}
+              disabled={false}
+              onClick={openPopup}
             />
           </div>
+          <ComingSoonPopup open={open} onClose={() => setOpen(false)} />
         </div>
       </div>
 

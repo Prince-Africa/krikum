@@ -1,12 +1,24 @@
 import type { FC } from 'react';
+import { useState } from 'react';
 import StoreButton from './StoreButton';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import handMockup from '@/assets/handmockup.svg';
+import ComingSoonPopup from './ComingSoonPopup';
 
 interface DownloadAppCTAProps { }
 
 const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  function openComingSoon() {
+    setPopupOpen(true);
+  }
+
+  function closeComingSoon() {
+    setPopupOpen(false);
+  }
+
   return (
     <div className="w-full max-w-6xl relative bg-black rounded-[32px] sm:rounded-[64px] outline-4 outline-white backdrop-blur-[2px] overflow-visible mx-auto px-4 sm:px-8 py-12 sm:py-16 flex flex-col sm:flex-row items-start sm:items-center h-auto sm:h-[640px]">
       {/* Gradient container with overflow hidden */}
@@ -31,14 +43,16 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
             icon={appleIcon}
             storeName="App Store"
             className="bg-white flex-1 sm:flex-initial"
-            disabled={true}
+            disabled={false}
+            onClick={openComingSoon}
           />
           <StoreButton
             href=""
             icon={playstoreIcon}
             storeName="Play Store"
             className="bg-white flex-1 sm:flex-initial"
-            disabled={true}
+            disabled={false}
+            onClick={openComingSoon}
           />
         </div>
       </div>
@@ -51,6 +65,7 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
           alt="Hand holding phone with Item 7 app"
         />
       </div>
+      <ComingSoonPopup open={popupOpen} onClose={closeComingSoon} />
     </div>
   );
 };
