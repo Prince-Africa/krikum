@@ -129,7 +129,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
       </div>
 
       <img
-        className="w-[85%] md:w-auto scale-[1.15] mt-16 md:mt-24 z-0"
+        className="sm:w-[85%] md:w-auto sm:scale-[1.15] sm:mt-16 md:mt-24 z-0"
         src={iphoneMockup}
         alt="iPhone App Preview"
       />
