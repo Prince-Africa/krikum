@@ -5,12 +5,7 @@
       {
         "appID": "VWMQ29T98T.com.princeafrica.item7go",
         "paths": [
-          "*"
-        ],
-        "components": [
-          {
-            "/": "/*"
-          }
+          "/menu/*"
         ]
       }
     ]
