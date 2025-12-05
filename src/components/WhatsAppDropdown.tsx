@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, easeOut, easeIn } from 'framer-motion';
 import whatsappIcon from '@/assets/tabler_brand-whatsapp-filled.png';
 import dropdownIcon from '@/assets/dropdown.png';
 
@@ -41,7 +41,7 @@ const WhatsAppDropdown: FC = () => {
       scale: 1,
       transition: {
         duration: 0.2,
-        ease: "easeOut"
+        ease: easeOut
       }
     },
     exit: {
@@ -50,7 +50,7 @@ const WhatsAppDropdown: FC = () => {
       scale: 0.95,
       transition: {
         duration: 0.15,
-        ease: "easeIn"
+        ease: easeIn
       }
     }
   };

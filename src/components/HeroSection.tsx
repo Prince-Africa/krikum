@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import StoreButton from './StoreButton';
 import { useState } from 'react';
 import ComingSoonPopup from './ComingSoonPopup';
@@ -28,7 +28,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: easeOut }
     }
   };
 
@@ -37,7 +37,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: easeOut }
     }
   };
 
@@ -46,7 +46,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay: 1.2, ease: "easeOut" }
+      transition: { duration: 0.6, delay: 1.2, ease: easeOut }
     }
   };
 

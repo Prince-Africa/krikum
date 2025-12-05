@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 
 interface StoreButtonProps {
   href?: string;
@@ -23,7 +23,7 @@ const StoreButton: FC<StoreButtonProps> = ({ href, icon, storeName, className = 
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: easeOut
       }
     },
     hover: {
