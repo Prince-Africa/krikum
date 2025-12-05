@@ -4,7 +4,7 @@ import { motion, easeOut } from 'framer-motion';
 interface StoreButtonProps {
   href?: string;
   icon: string;
-  storeName: 'App Store' | 'Play Store';
+  storeName: 'App Store' | 'Play Store' | 'Web App';
   className?: string;
   disabled?: boolean;
   onClick?: () => void;

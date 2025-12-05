@@ -110,7 +110,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
             <StoreButton
               href=""
               icon={appleIcon}
-              storeName="App Store"
+              storeName="Web App"
               className="flex-1"
               disabled={false}
               onClick={openPopup}

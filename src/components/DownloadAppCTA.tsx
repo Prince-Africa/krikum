@@ -41,7 +41,7 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
           <StoreButton
             href=""
             icon={appleIcon}
-            storeName="App Store"
+            storeName="Web App"
             className="bg-white flex-1 sm:flex-initial"
             disabled={false}
             onClick={openComingSoon}
