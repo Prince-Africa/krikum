@@ -14,16 +14,11 @@ const TermsAndConditionsPage: FC = () => {
     },
     {
       title: "Order Placement and Pickup",
-      content: "Meals must be picked up at designated pick up stations. Once an order is placed, it can not be modified.",
-      list: [
-        "All orders not picked up within six (6) hours of the scheduled pick up time may be eligible for cancellation.",
-        "All requests remaining unclaimed by 11:58 PM will be automatically canceled and returned to the user wallet.",
-        "You must pick up your order within the stated time as your meal is best served hot. Orders not picked up within the allowed time will be discarded without refund."
-      ]
+      content: "Meals must be picked up at designated pick up stations. Once an order is placed, it can not be modified. All orders not picked up within an hour of the scheduled pick up time may be eligible for cancellation. You must pick up your order within the stated time as your meal is best served hot. Orders not picked up within the allowed time will be discarded without refund."
     },
     {
       title: "Payment Methods",
-      content: "All payments must be made through the app using the available payment methods which are: through the item7(go) user wallet, internet banking (bank transfer or card)."
+      content: "All payments must be made through the app using the available payment methods which are: through the item7(go) user wallet, internet banking (bank transfer, card or USSD). Item7go should not be held responsible for incomplete transactions stemming from the user's bank - in such cases, please contact your bank. Also, please note that no item7go agent would contact you concerning making payment to a different account or request your login details."
     },
     {
       title: "QR Code and Proof of Purchase",
@@ -31,12 +26,9 @@ const TermsAndConditionsPage: FC = () => {
     },
     {
       title: "Refund Policy",
-      content: "Payment made will be refunded to your item7(go) user wallet if you have not scanned the QR code. Any errors from the user, for example late pick up or wrong pickup station will not be eligible for refund."
+      content: "Any error from the user, for example late pick up or wrong pickup station will not be eligible for refund."
     },
-    {
-      title: "Food Safety and Allergies",
-      content: "item7(go) is responsible for the safety, quality and legality of the food we provide but we are not responsible for food allergies or dieting restrictions. Users should check the menu before making a request."
-    },
+    
     {
       title: "Prohibited Activities",
       content: "Users agree not to use the app for unlawful or fraudulent activities. We reserve the right to refuse or cancel any request for reasons including but not limited to product availability, errors in pricing or suspected fraud or any other reason that we believe will be detrimental to our values."
@@ -115,17 +107,7 @@ const TermsAndConditionsPage: FC = () => {
                   {' '}for information on how we collect, use and disclose your personal data.
                 </p>
               )}
-              
-              {section.list && (
-                <ul className="flex flex-col gap-2 ml-4 md:ml-6">
-                  {section.list.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-Colours-Primary text-sm sm:text-base font-normal leading-relaxed list-disc" style={{ fontFamily: 'var(--font-body)' }}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              
+
               {section.contactInfo && section.contactInfo.phones && (
                 <div className="flex flex-col gap-2">
                   {section.contactInfo.phones.map((phone, phoneIndex) => (
