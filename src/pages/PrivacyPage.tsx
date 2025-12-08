@@ -19,7 +19,7 @@ const PrivacyPage: FC = () => {
       list: [
         "Contract: To fulfill your order requests and manage transactions.",
         "Legitimate Interest: To improve user experience, maintain platform security, and communicate relevant updates.",
-        "Consent: Where explicitly required, such as for voice note recordings, location access, or promotional notifications."
+        "Consent: Where explicitly required, such as for location access, or promotional notifications."
       ]
     },
     {
@@ -180,3 +180,4 @@ const PrivacyPage: FC = () => {
 
 
 export default PrivacyPage; 
+
