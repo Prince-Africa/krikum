@@ -1,0 +1,23 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "VWMQ29T98T.com.princeafrica.item7go",
+        "paths": [
+          "/menu/*"
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+      "VWMQ29T98T.com.princeafrica.item7go"
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "VWMQ29T98T.com.princeafrica.item7go"
+    ]
+  }
+}
