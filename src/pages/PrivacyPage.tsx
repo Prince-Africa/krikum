@@ -11,7 +11,7 @@ const PrivacyPage: FC = () => {
     },
     {
       title: "2. What is Personal Data?",
-      content: "Personal data refers to any information that can identify an individual directly or indirectly, such as your name, phone number, email address, location data, or audio instructions you submit with your order."
+      content: "Personal data refers to any information that can identify an individual directly or indirectly, such as your name, phone number, email address, location data; SINCE ALL THESE ARE ASSOCIATED WITH YOUR ORDER."
     },
     {
       title: "3. Legal Bases for Processing Your Data",
@@ -25,7 +25,7 @@ const PrivacyPage: FC = () => {
     {
       title: "4. Personal Data We Collect and Why",
       list: [
-        "Account and Order Information: Name, email, phone number, food orders, payment details, pickup preferences, and audio (voice notes).",
+        "Account and Order Information: Name, email, phone number, food orders, payment details and pickup preferences.",
         "Device and Usage Data: Device type, app version, IP address, and usage analytics.",
         "Location Data: If enabled, we use it to find nearby stores and optimize logistics and pricing.",
         "Communication Data: Feedback, inquiries, and support requests."
@@ -46,7 +46,7 @@ const PrivacyPage: FC = () => {
       title: "6. Who We Share Your Information With",
       content: "We only share your information with:",
       list: [
-        "Partner restaurants and vendors to fulfill orders",
+        "Our Outlets and vendors to fulfill orders",
         "Payment processors to handle transactions",
         "Third-party providers for analytics, hosting, and support (under strict confidentiality)"
       ]
@@ -74,7 +74,7 @@ const PrivacyPage: FC = () => {
     },
     {
       title: "10. Cookies and Analytics",
-      content: "We use tools like Google Analytics for Firebase to collect anonymized usage data and improve the app. We do not use traditional web cookies."
+      content: "We use tools like Google Analytics to collect anonymized usage data and improve the app. We do not use traditional web cookies."
     },
     {
       title: "11. Children's Privacy",
@@ -177,5 +177,6 @@ const PrivacyPage: FC = () => {
     </div>
   );
 };
+
 
 export default PrivacyPage; 
