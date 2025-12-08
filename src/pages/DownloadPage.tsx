@@ -14,12 +14,39 @@ const DownloadPage = () => {
 
     if (isIOS) {
       window.location.href = appStoreUrl;
-    } else if (isAndroid) {
-      window.location.href = playStoreUrl;
-    } else {
-      // For desktop users, redirect to homepage
-      window.location.href = fallbackUrl;
+      return;
     }
+
+    if (isAndroid) {
+      // Try to open the installed app via an Android intent using our App Link path.
+      // If the app is not installed, the browser_fallback_url will send the user to the Play Store.
+      const host = window.location.host;
+      const intentUrl = `intent://${host}/menu#Intent;scheme=https;package=com.princeafrica.item7go;S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end;`;
+
+      // Kick off the intent
+      window.location.href = intentUrl;
+
+      // Safety fallback in case the intent is ignored
+      const fallbackTimer = setTimeout(() => {
+        window.location.href = playStoreUrl;
+      }, 2000);
+
+      // Clear the fallback if the page visibility changes (likely app switch)
+      const handleVisibilityChange = () => {
+        if (document.hidden) {
+          clearTimeout(fallbackTimer);
+        }
+      };
+
+      document.addEventListener("visibilitychange", handleVisibilityChange);
+      return () => {
+        document.removeEventListener("visibilitychange", handleVisibilityChange);
+        clearTimeout(fallbackTimer);
+      };
+    }
+
+    // For desktop users, redirect to homepage
+    window.location.href = fallbackUrl;
   }, []);
 
   // Animation variants to match the current design

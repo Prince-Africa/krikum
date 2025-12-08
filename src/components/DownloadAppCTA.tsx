@@ -1,9 +1,9 @@
 import type { FC } from 'react';
-import { useState } from 'react';
 import StoreButton from './StoreButton';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import handMockup from '@/assets/handmockup.svg';
+import { useState } from 'react';
 import ComingSoonPopup from './ComingSoonPopup';
 
 interface DownloadAppCTAProps { }
@@ -47,12 +47,25 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
             onClick={openComingSoon}
           />
           <StoreButton
-            href=""
             icon={playstoreIcon}
             storeName="Play Store"
             className="bg-white flex-1 sm:flex-initial"
             disabled={false}
-            onClick={openComingSoon}
+            onClick={() => {
+              const playStore = 'https://play.google.com/store/apps/details?id=com.princeafrica.item7go';
+              const intent = `intent://menu#Intent;scheme=https;package=com.princeafrica.item7go;S.browser_fallback_url=${encodeURIComponent(
+                playStore
+              )};end;`;
+              try {
+                window.location.href = intent;
+              } catch (e) {
+                window.location.href = playStore;
+                return;
+              }
+              setTimeout(() => {
+                window.location.href = playStore;
+              }, 2000);
+            }}
           />
         </div>
       </div>

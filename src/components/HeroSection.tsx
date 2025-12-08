@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { motion, easeOut } from 'framer-motion';
-import StoreButton from './StoreButton';
 import { useState } from 'react';
+import StoreButton from './StoreButton';
 import ComingSoonPopup from './ComingSoonPopup';
 import item7_navbar_logo from '@/assets/item7_navbar_logo.png';
 import appleIcon from '@/assets/apple icon.png';
@@ -56,6 +56,10 @@ const HeroSection: FC<HeroSectionProps> = () => {
     setOpen(true);
   }
 
+  function closePopup() {
+    setOpen(false);
+  }
+
   return (
     <>
       <div className="w-[548px] h-[491px] left-[calc(50%-200px)] top-[450px] absolute blur-accent-strong opacity-60 pointer-events-none" />
@@ -106,7 +110,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
             Feel the Item7GO experience without the wait.<br /> Order through our mobile app today
           </motion.div>
 
-          <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
+            <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
             <StoreButton
               href=""
               icon={appleIcon}
@@ -116,15 +120,32 @@ const HeroSection: FC<HeroSectionProps> = () => {
               onClick={openPopup}
             />
             <StoreButton
-              href=""
               icon={playstoreIcon}
               storeName="Play Store"
               className="flex-1"
               disabled={false}
-              onClick={openPopup}
+              onClick={() => {
+                const playStore = 'https://play.google.com/store/apps/details?id=com.princeafrica.item7go';
+                // Intent URI using App Link path (/menu) — Chrome on Android will try the app first.
+                const intent = `intent://menu#Intent;scheme=https;package=com.princeafrica.item7go;S.browser_fallback_url=${encodeURIComponent(
+                  playStore
+                )};end;`;
+                // Try intent first
+                try {
+                  window.location.href = intent;
+                } catch (e) {
+                  // Fallback directly to Play Store
+                  window.location.href = playStore;
+                  return;
+                }
+                // Safety fallback in case intent is ignored
+                setTimeout(() => {
+                  window.location.href = playStore;
+                }, 2000);
+              }}
             />
           </div>
-          <ComingSoonPopup open={open} onClose={() => setOpen(false)} />
+          <ComingSoonPopup open={open} onClose={closePopup} />
         </div>
       </div>
 
