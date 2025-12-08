@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { motion, easeOut } from 'framer-motion';
+import { PLAY_STORE_URL, APP_STORE_URL } from '../config/links';
 
 const DownloadPage = () => {
   // App Store URLs
-  const appStoreUrl = "https://apps.apple.com/app/item7go/id6720821088";
-  const playStoreUrl = "https://play.google.com/store/apps/details?id=com.princeafrica.item7go";
+  const appStoreUrl = APP_STORE_URL;
+  const playStoreUrl = PLAY_STORE_URL;
   const fallbackUrl = "/"; // Redirect to homepage if not mobile
 
   useEffect(() => {
@@ -18,31 +19,9 @@ const DownloadPage = () => {
     }
 
     if (isAndroid) {
-      // Try to open the installed app via an Android intent using our App Link path.
-      // If the app is not installed, the browser_fallback_url will send the user to the Play Store.
-      const host = window.location.host;
-      const intentUrl = `intent://${host}/menu#Intent;scheme=https;package=com.princeafrica.item7go;S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end;`;
-
-      // Kick off the intent
-      window.location.href = intentUrl;
-
-      // Safety fallback in case the intent is ignored
-      const fallbackTimer = setTimeout(() => {
-        window.location.href = playStoreUrl;
-      }, 2000);
-
-      // Clear the fallback if the page visibility changes (likely app switch)
-      const handleVisibilityChange = () => {
-        if (document.hidden) {
-          clearTimeout(fallbackTimer);
-        }
-      };
-
-      document.addEventListener("visibilitychange", handleVisibilityChange);
-      return () => {
-        document.removeEventListener("visibilitychange", handleVisibilityChange);
-        clearTimeout(fallbackTimer);
-      };
+      // Navigate directly to the Play Store URL only (no intents)
+      window.location.href = playStoreUrl;
+      return;
     }
 
     // For desktop users, redirect to homepage

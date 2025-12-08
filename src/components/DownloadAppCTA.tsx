@@ -3,6 +3,7 @@ import StoreButton from './StoreButton';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import handMockup from '@/assets/handmockup.svg';
+import { PLAY_STORE_URL } from '../config/links';
 import { useState } from 'react';
 import ComingSoonPopup from './ComingSoonPopup';
 
@@ -52,19 +53,7 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
             className="bg-white flex-1 sm:flex-initial"
             disabled={false}
             onClick={() => {
-              const playStore = 'https://play.google.com/store/apps/details?id=com.princeafrica.item7go';
-              const intent = `intent://menu#Intent;scheme=https;package=com.princeafrica.item7go;S.browser_fallback_url=${encodeURIComponent(
-                playStore
-              )};end;`;
-              try {
-                window.location.href = intent;
-              } catch (e) {
-                window.location.href = playStore;
-                return;
-              }
-              setTimeout(() => {
-                window.location.href = playStore;
-              }, 2000);
+              window.location.href = PLAY_STORE_URL;
             }}
           />
         </div>

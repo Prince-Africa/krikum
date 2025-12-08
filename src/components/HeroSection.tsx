@@ -7,6 +7,7 @@ import item7_navbar_logo from '@/assets/item7_navbar_logo.png';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import iphoneMockup from '@/assets/iphone mockup.png';
+import { PLAY_STORE_URL } from '../config/links';
 
 
 interface HeroSectionProps { }
@@ -125,23 +126,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
               className="flex-1"
               disabled={false}
               onClick={() => {
-                const playStore = 'https://play.google.com/store/apps/details?id=com.princeafrica.item7go';
-                // Intent URI using App Link path (/menu) — Chrome on Android will try the app first.
-                const intent = `intent://menu#Intent;scheme=https;package=com.princeafrica.item7go;S.browser_fallback_url=${encodeURIComponent(
-                  playStore
-                )};end;`;
-                // Try intent first
-                try {
-                  window.location.href = intent;
-                } catch (e) {
-                  // Fallback directly to Play Store
-                  window.location.href = playStore;
-                  return;
-                }
-                // Safety fallback in case intent is ignored
-                setTimeout(() => {
-                  window.location.href = playStore;
-                }, 2000);
+                window.location.href = PLAY_STORE_URL;
               }}
             />
           </div>
