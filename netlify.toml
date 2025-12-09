@@ -20,6 +20,17 @@
   [headers.values]
     Content-Type = "text/css"
 
+# Redirect /menu paths to homepage for users without the app
+[[redirects]]
+  from = "/menu/*"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/menu"
+  to = "/"
+  status = 302
+
 # SPA fallback - serve index.html for client-side routes, but exclude .well-known for deep linking
 [[redirects]]
   from = "/.well-known/*"
