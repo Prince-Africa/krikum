@@ -113,12 +113,11 @@ const HeroSection: FC<HeroSectionProps> = () => {
 
             <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
             <StoreButton
-              href=""
+              href="https://app.item7go.com"
               icon={appleIcon}
               storeName="Web App"
               className="flex-1"
               disabled={false}
-              onClick={openPopup}
             />
             <StoreButton
               icon={playstoreIcon}
