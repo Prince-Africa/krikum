@@ -4,21 +4,10 @@ import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import handMockup from '@/assets/handmockup.svg';
 import { PLAY_STORE_URL } from '../config/links';
-import { useState } from 'react';
-import ComingSoonPopup from './ComingSoonPopup';
 
 interface DownloadAppCTAProps { }
 
 const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
-  const [popupOpen, setPopupOpen] = useState(false);
-
-  function openComingSoon() {
-    setPopupOpen(true);
-  }
-
-  function closeComingSoon() {
-    setPopupOpen(false);
-  }
 
   return (
     <div className="w-full max-w-6xl relative bg-black rounded-[32px] sm:rounded-[64px] outline-4 outline-white backdrop-blur-[2px] overflow-visible mx-auto px-4 sm:px-8 py-12 sm:py-16 flex flex-col sm:flex-row items-start sm:items-center h-auto sm:h-[640px]">
@@ -66,7 +55,6 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
           alt="Hand holding phone with Item 7 app"
         />
       </div>
-      <ComingSoonPopup open={popupOpen} onClose={closeComingSoon} />
     </div>
   );
 };

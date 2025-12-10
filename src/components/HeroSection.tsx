@@ -1,8 +1,6 @@
 import type { FC } from 'react';
 import { motion, easeOut } from 'framer-motion';
-import { useState } from 'react';
 import StoreButton from './StoreButton';
-import ComingSoonPopup from './ComingSoonPopup';
 import item7_navbar_logo from '@/assets/item7_navbar_logo.png';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
@@ -51,15 +49,6 @@ const HeroSection: FC<HeroSectionProps> = () => {
     }
   };
 
-  const [open, setOpen] = useState(false);
-
-  function openPopup() {
-    setOpen(true);
-  }
-
-  function closePopup() {
-    setOpen(false);
-  }
 
   return (
     <>
@@ -129,7 +118,6 @@ const HeroSection: FC<HeroSectionProps> = () => {
               }}
             />
           </div>
-          <ComingSoonPopup open={open} onClose={closePopup} />
         </div>
       </div>
 
