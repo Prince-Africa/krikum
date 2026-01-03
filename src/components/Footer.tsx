@@ -24,12 +24,14 @@ const Footer: FC = () => {
           >
             Privacy Policy
           </button>
-          <a 
-            href="mailto:prince.africa@item7go.com" 
+          <a
+            href="https://wa.me/2348033458479"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-Colours-Primary text-base md:text-sm hover:text-Colours-Primary/80 transition-colors py-2 px-4 rounded-lg hover:bg-Colours-Primary/5"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            Contact
+            contact
           </a>
         </div>
       </div>
