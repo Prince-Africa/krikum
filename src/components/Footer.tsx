@@ -10,6 +10,15 @@ const Footer: FC = () => {
           © {new Date().getFullYear()} Item7go
         </p>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <a
+            href="https://wa.me/2348033458479"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-Colours-Primary text-base md:text-sm hover:text-Colours-Primary/80 transition-colors py-2 px-4 rounded-lg hover:bg-Colours-Primary/5"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            Contact Us
+          </a>
           <button
             onClick={() => navigate('/terms')}
             className="text-Colours-Primary text-base md:text-sm hover:text-Colours-Primary/80 transition-colors cursor-pointer py-2 px-4 rounded-lg hover:bg-Colours-Primary/5"
@@ -24,15 +33,6 @@ const Footer: FC = () => {
           >
             Privacy Policy
           </button>
-          <a
-            href="https://wa.me/2348033458479"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-Colours-Primary text-base md:text-sm hover:text-Colours-Primary/80 transition-colors py-2 px-4 rounded-lg hover:bg-Colours-Primary/5"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            contact
-          </a>
         </div>
       </div>
     </footer>
