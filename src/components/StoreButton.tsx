@@ -4,13 +4,22 @@ import { motion, easeOut } from 'framer-motion';
 interface StoreButtonProps {
   href?: string;
   icon: string;
-  storeName: 'App Store' | 'Play Store';
+  storeName: 'App Store' | 'Play Store' | 'Web App';
   className?: string;
+  iconClassName?: string;
   disabled?: boolean;
   onClick?: () => void;
 }
 
-const StoreButton: FC<StoreButtonProps> = ({ href, icon, storeName, className = '', disabled = false, onClick }) => {
+const StoreButton: FC<StoreButtonProps> = ({
+  href,
+  icon,
+  storeName,
+  className = '',
+  iconClassName = '',
+  disabled = false,
+  onClick
+}) => {
   const buttonVariants = {
     initial: {
       opacity: 0,
@@ -39,7 +48,7 @@ const StoreButton: FC<StoreButtonProps> = ({ href, icon, storeName, className = 
 
   const buttonContent = (
     <motion.div
-      className={`min-w-[150px] px-3 sm:px-button-px py-3 md:py-button-py bg-background-button rounded-button flex justify-center items-center gap-2 sm:gap-3 text-text-primary-lightbg transition-all cursor-pointer ${disabled
+      className={`min-w-[170px] min-h-[64px] px-4 sm:px-5 py-3 bg-background-button rounded-button flex justify-center items-center gap-3 text-text-primary-lightbg transition-all cursor-pointer ${disabled
         ? 'opacity-50 cursor-not-allowed bg-gray-400'
         : 'hover:opacity-90'
         } ${className}`}
@@ -53,9 +62,9 @@ const StoreButton: FC<StoreButtonProps> = ({ href, icon, storeName, className = 
       <img
         src={icon}
         alt={storeName}
-        className="w-7 h-7 md:w-6 md:h-6 object-contain"
+        className={`w-7 h-7 md:w-6 md:h-6 object-contain shrink-0 ${iconClassName}`}
       />
-      <span className="text-black font-montserrat font-semibold text-base leading-[150%] tracking-[0%]">
+      <span className="text-black font-montserrat font-semibold text-base leading-none tracking-[0%] whitespace-nowrap">
         {storeName}
       </span>
     </motion.div>

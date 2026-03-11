@@ -2,10 +2,11 @@ import type { FC } from 'react';
 import { motion, easeOut } from 'framer-motion';
 import StoreButton from './StoreButton';
 import item7_navbar_logo from '@/assets/item7_navbar_logo.png';
+import item7Favicon from '@/assets/Item7 favicon.png';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import iphoneMockup from '@/assets/iphone mockup.png';
-import { APP_STORE_URL, PLAY_STORE_URL } from '../config/links';
+import { APP_STORE_URL, PLAY_STORE_URL, WEB_APP_URL } from '../config/links';
 
 
 interface HeroSectionProps { }
@@ -100,7 +101,15 @@ const HeroSection: FC<HeroSectionProps> = () => {
             Feel the Item7GO experience without the wait.<br /> Order through our mobile app today
           </motion.div>
 
-            <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
+            <div className="pt-6 md:pt-4 flex flex-col sm:flex-row justify-center items-center gap-3 w-full px-1 sm:px-2 md:px-0 max-w-[620px] mx-auto">
+            <StoreButton
+              href={WEB_APP_URL}
+              icon={item7Favicon}
+              iconClassName="rounded-md"
+              storeName="Web App"
+              className="flex-1"
+              disabled={false}
+            />
             <StoreButton
               href={APP_STORE_URL}
               icon={appleIcon}
@@ -113,9 +122,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
               storeName="Play Store"
               className="flex-1"
               disabled={false}
-              onClick={() => {
-                window.location.href = PLAY_STORE_URL;
-              }}
+              href={PLAY_STORE_URL}
             />
           </div>
         </div>
