@@ -9,7 +9,6 @@ import { APP_STORE_URL, PLAY_STORE_URL, WEB_APP_URL } from '../config/links';
 interface DownloadAppCTAProps { }
 
 const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
-
   return (
     <div className="w-full max-w-6xl relative bg-black rounded-[32px] sm:rounded-[64px] outline-4 outline-white backdrop-blur-[2px] overflow-visible mx-auto px-4 sm:px-8 py-12 sm:py-16 flex flex-col sm:flex-row items-start sm:items-center h-auto sm:h-[640px]">
       {/* Gradient container with overflow hidden */}
@@ -28,13 +27,60 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
             Download the App today!
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+        <div className="flex w-full sm:hidden">
+          <div className="flex w-full flex-col gap-3">
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="web-app-pulse flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-4 text-base font-semibold text-black shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
+            >
+              <img
+                src={item7Favicon}
+                alt="Web App"
+                className="h-6 w-6 rounded-md object-contain"
+              />
+              <span className="whitespace-nowrap">Open Web App</span>
+            </a>
+
+            <div className="grid grid-cols-2 gap-3">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-14 items-center justify-center gap-2 rounded-full bg-white px-3 py-4 text-sm font-semibold text-black shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src={appleIcon}
+                  alt="App Store"
+                  className="h-5 w-5 object-contain"
+                />
+                <span className="whitespace-nowrap">App Store</span>
+              </a>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-14 items-center justify-center gap-2 rounded-full bg-white px-3 py-4 text-sm font-semibold text-black shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              >
+                <img
+                  src={playstoreIcon}
+                  alt="Play Store"
+                  className="h-5 w-5 object-contain"
+                />
+                <span className="whitespace-nowrap">Play Store</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="hidden sm:flex sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
           <StoreButton
             href={WEB_APP_URL}
             icon={item7Favicon}
             iconClassName="rounded-md"
             storeName="Web App"
-            className="bg-white flex-1 sm:flex-initial"
+            className="web-app-pulse bg-white flex-1 sm:flex-initial"
             disabled={false}
           />
           <StoreButton
