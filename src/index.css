@@ -151,21 +151,3 @@ h6 {
   filter: blur(300px);
   /* Tailwind's blur-[] uses filter, this matches */
 }
-
-@keyframes web-app-pulse {
-  0%,
-  100% {
-    border-color: #facc15;
-    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.2), 0 0 18px rgba(250, 204, 21, 0.18);
-  }
-
-  50% {
-    border-color: #ef4444;
-    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0.08), 0 0 28px rgba(239, 68, 68, 0.22);
-  }
-}
-
-.web-app-pulse {
-  border: 2px solid #facc15;
-  animation: web-app-pulse 1.8s ease-in-out infinite;
-}

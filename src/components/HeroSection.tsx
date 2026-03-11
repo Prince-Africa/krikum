@@ -103,20 +103,6 @@ const HeroSection: FC<HeroSectionProps> = () => {
 
             <div className="pt-6 w-full px-4 sm:hidden">
               <div className="mx-auto flex w-full max-w-[340px] flex-col gap-3">
-                <a
-                  href={WEB_APP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="web-app-pulse flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-4 text-base font-semibold text-black shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
-                >
-                  <img
-                    src={item7Favicon}
-                    alt="Web App"
-                    className="h-6 w-6 rounded-md object-contain"
-                  />
-                  <span className="whitespace-nowrap">Open Web App</span>
-                </a>
-
                 <div className="grid grid-cols-2 gap-3">
                   <a
                     href={APP_STORE_URL}
@@ -145,33 +131,47 @@ const HeroSection: FC<HeroSectionProps> = () => {
                     <span className="whitespace-nowrap">Play Store</span>
                   </a>
                 </div>
+
+                <a
+                  href={WEB_APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-4 text-base font-semibold text-black shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
+                >
+                  <img
+                    src={item7Favicon}
+                    alt="Web App"
+                    className="h-6 w-6 rounded-md object-contain"
+                  />
+                  <span className="whitespace-nowrap">Open Web App</span>
+                </a>
               </div>
             </div>
 
             <div className="hidden pt-4 sm:flex sm:flex-row justify-center items-center gap-3 w-full px-1 sm:px-2 md:px-0 max-w-[620px] mx-auto">
-            <StoreButton
-              href={WEB_APP_URL}
-              icon={item7Favicon}
-              iconClassName="rounded-md"
-              storeName="Web App"
-              className="web-app-pulse flex-1"
-              disabled={false}
-            />
-            <StoreButton
-              href={APP_STORE_URL}
-              icon={appleIcon}
-              storeName="App Store"
-              className="flex-1"
-              disabled={false}
-            />
-            <StoreButton
-              icon={playstoreIcon}
-              storeName="Play Store"
-              className="flex-1"
-              disabled={false}
-              href={PLAY_STORE_URL}
-            />
-          </div>
+              <StoreButton
+                href={APP_STORE_URL}
+                icon={appleIcon}
+                storeName="App Store"
+                className="flex-1"
+                disabled={false}
+              />
+              <StoreButton
+                icon={playstoreIcon}
+                storeName="Play Store"
+                className="flex-1"
+                disabled={false}
+                href={PLAY_STORE_URL}
+              />
+              <StoreButton
+                href={WEB_APP_URL}
+                icon={item7Favicon}
+                iconClassName="rounded-md"
+                storeName="Web App"
+                className="flex-1"
+                disabled={false}
+              />
+            </div>
         </div>
       </div>
 

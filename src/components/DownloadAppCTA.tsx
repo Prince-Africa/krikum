@@ -29,20 +29,6 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
         </div>
         <div className="flex w-full sm:hidden">
           <div className="flex w-full flex-col gap-3">
-            <a
-              href={WEB_APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="web-app-pulse flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-4 text-base font-semibold text-black shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
-            >
-              <img
-                src={item7Favicon}
-                alt="Web App"
-                className="h-6 w-6 rounded-md object-contain"
-              />
-              <span className="whitespace-nowrap">Open Web App</span>
-            </a>
-
             <div className="grid grid-cols-2 gap-3">
               <a
                 href={APP_STORE_URL}
@@ -71,32 +57,50 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
                 <span className="whitespace-nowrap">Play Store</span>
               </a>
             </div>
+
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-4 text-base font-semibold text-black shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
+            >
+              <img
+                src={item7Favicon}
+                alt="Web App"
+                className="h-6 w-6 rounded-md object-contain"
+              />
+              <span className="whitespace-nowrap">Open Web App</span>
+            </a>
           </div>
         </div>
 
-        <div className="hidden sm:flex sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
-          <StoreButton
-            href={WEB_APP_URL}
-            icon={item7Favicon}
-            iconClassName="rounded-md"
-            storeName="Web App"
-            className="web-app-pulse bg-white flex-1 sm:flex-initial"
-            disabled={false}
-          />
-          <StoreButton
-            href={APP_STORE_URL}
-            icon={appleIcon}
-            storeName="App Store"
-            className="bg-white flex-1 sm:flex-initial"
-            disabled={false}
-          />
-          <StoreButton
-            icon={playstoreIcon}
-            storeName="Play Store"
-            className="bg-white flex-1 sm:flex-initial"
-            disabled={false}
-            href={PLAY_STORE_URL}
-          />
+        <div className="hidden sm:flex w-full sm:max-w-[420px]">
+          <div className="flex w-full flex-col gap-3">
+            <div className="grid grid-cols-2 gap-3">
+              <StoreButton
+                href={APP_STORE_URL}
+                icon={appleIcon}
+                storeName="App Store"
+                className="bg-white w-full"
+                disabled={false}
+              />
+              <StoreButton
+                icon={playstoreIcon}
+                storeName="Play Store"
+                className="bg-white w-full"
+                disabled={false}
+                href={PLAY_STORE_URL}
+              />
+            </div>
+            <StoreButton
+              href={WEB_APP_URL}
+              icon={item7Favicon}
+              iconClassName="rounded-md"
+              storeName="Web App"
+              className="bg-white w-full"
+              disabled={false}
+            />
+          </div>
         </div>
       </div>
 
