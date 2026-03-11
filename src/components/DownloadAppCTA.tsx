@@ -3,7 +3,7 @@ import StoreButton from './StoreButton';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import handMockup from '@/assets/handmockup.svg';
-import { PLAY_STORE_URL } from '../config/links';
+import { APP_STORE_URL, PLAY_STORE_URL } from '../config/links';
 
 interface DownloadAppCTAProps { }
 
@@ -29,9 +29,9 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
           <StoreButton
-            href="https://app.item7go.com"
+            href={APP_STORE_URL}
             icon={appleIcon}
-            storeName="Web App"
+            storeName="App Store"
             className="bg-white flex-1 sm:flex-initial"
             disabled={false}
           />

@@ -5,7 +5,7 @@ import item7_navbar_logo from '@/assets/item7_navbar_logo.png';
 import appleIcon from '@/assets/apple icon.png';
 import playstoreIcon from '@/assets/playstore_icon.png';
 import iphoneMockup from '@/assets/iphone mockup.png';
-import { PLAY_STORE_URL } from '../config/links';
+import { APP_STORE_URL, PLAY_STORE_URL } from '../config/links';
 
 
 interface HeroSectionProps { }
@@ -102,9 +102,9 @@ const HeroSection: FC<HeroSectionProps> = () => {
 
             <div className="pt-6 md:pt-4 flex flex-row justify-center items-center gap-2 md:gap-group-gap w-full px-1 sm:px-2 md:px-0 max-w-[360px] mx-auto">
             <StoreButton
-              href="https://app.item7go.com"
+              href={APP_STORE_URL}
               icon={appleIcon}
-              storeName="Web App"
+              storeName="App Store"
               className="flex-1"
               disabled={false}
             />
