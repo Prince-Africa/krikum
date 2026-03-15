@@ -170,7 +170,7 @@ const PrivacyPage: FC = () => {
         {/* Last Updated */}
         <div className="w-full pt-6 md:pt-8 border-t border-Colours-Primary/20">
           <p className="text-Colours-Primary/60 text-xs sm:text-sm font-normal leading-relaxed text-center" style={{ fontFamily: 'var(--font-body)' }}>
-            Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            Last updated: December 8, 2025
           </p>
         </div>
       </div>
