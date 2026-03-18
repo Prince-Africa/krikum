@@ -105,9 +105,9 @@ const DownloadAppCTA: FC<DownloadAppCTAProps> = () => {
       </div>
 
       {/* Image container - positioned at bottom for both mobile and desktop */}
-      <div className="absolute w-full right-0 bottom-0 sm:w-[68%] h-[250px] sm:h-[90%] z-[20]">
+      <div className="pointer-events-none absolute w-full right-0 bottom-0 sm:w-[68%] h-[250px] sm:h-[90%] z-[2]">
         <img
-          className="w-full h-full object-contain absolute bottom-0 right-0 sm:right-[5%]"
+          className="absolute bottom-0 right-0 w-full h-full select-none object-contain sm:right-[5%]"
           src={handMockup}
           alt="Hand holding phone with Item 7 app"
         />

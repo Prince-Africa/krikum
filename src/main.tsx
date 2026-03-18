@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
+import Footer from './components/Footer'
 import VerifyEmailPage from './pages/VerifyEmailPage'
 import DownloadPage from './pages/DownloadPage'
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage'
@@ -29,10 +30,13 @@ const NotFoundPage: FC = () => (
 )
 
 const RootLayout: FC = () => (
-  <>
+  <div className="min-h-screen flex flex-col bg-black">
     <ScrollRestoration />
-    <Outlet />
-  </>
+    <div className="flex-1">
+      <Outlet />
+    </div>
+    <Footer />
+  </div>
 )
 
 const router = createBrowserRouter([
@@ -45,11 +49,8 @@ const router = createBrowserRouter([
       { path: 'download', element: <DownloadPage /> },
       { path: 'terms', element: <TermsAndConditionsPage /> },
       { path: 'privacy', element: <PrivacyPage /> },
+      { path: '*', element: <NotFoundPage /> },
     ],
-  },
-  {
-    path: '*',
-    element: <NotFoundPage />,
   },
 ])
 
