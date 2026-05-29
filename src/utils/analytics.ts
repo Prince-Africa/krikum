@@ -247,6 +247,14 @@ export class Analytics {
         });
     }
 
+    public trackNfcOpen(): void {
+        this.sendCustomEvent('nfc_open', {
+            source: 'nfc',
+            medium: 'physical',
+            campaign: 'q8t'
+        });
+    }
+
     public trackScrollDepth(depth: number): void {
         this.sendCustomEvent('scroll_depth', {
             depth_percentage: depth,

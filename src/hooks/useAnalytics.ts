@@ -1,17 +1,45 @@
 import { useEffect, useCallback, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { analytics } from '../utils/analytics';
 
+const NFC_OPEN_PENDING_KEY = 'item7go:nfc-open-pending';
+
+declare global {
+    interface Window {
+        __item7goNfcOpenPending?: boolean;
+    }
+}
+
 export const useAnalytics = () => {
+    const location = useLocation();
     const pageStartTime = useRef<number>(Date.now());
     const scrollDepthTracked = useRef<Set<number>>(new Set());
 
-    // Track page view on mount
+    // Track page view on route changes
     useEffect(() => {
         analytics.trackPageView();
 
-        // Track time on page when component unmounts
+        let hasPendingNfcOpen = window.__item7goNfcOpenPending === true;
+
+        try {
+            hasPendingNfcOpen = hasPendingNfcOpen || sessionStorage.getItem(NFC_OPEN_PENDING_KEY) === 'true';
+            sessionStorage.removeItem(NFC_OPEN_PENDING_KEY);
+        } catch {
+            // Storage can be unavailable in restricted browser contexts.
+        }
+
+        if (hasPendingNfcOpen) {
+            window.__item7goNfcOpenPending = false;
+            analytics.trackNfcOpen();
+        }
+    }, [location.pathname, location.search]);
+
+    // Track time on page when component unmounts
+    useEffect(() => {
+        const startTime = pageStartTime.current;
+
         return () => {
-            const timeOnPage = Math.round((Date.now() - pageStartTime.current) / 1000);
+            const timeOnPage = Math.round((Date.now() - startTime) / 1000);
             analytics.trackTimeOnPage(timeOnPage);
         };
     }, []);
@@ -54,7 +82,7 @@ export const useAnalytics = () => {
         analytics.trackUserEngagement(action, category, label, value);
     }, []);
 
-    const sendCustomEvent = useCallback((eventName: string, parameters: Record<string, any>) => {
+    const sendCustomEvent = useCallback((eventName: string, parameters: Record<string, unknown>) => {
         analytics.sendCustomEvent(eventName, parameters);
     }, []);
 

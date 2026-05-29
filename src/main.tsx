@@ -13,6 +13,28 @@ import VerifyEmailPage from './pages/VerifyEmailPage'
 import DownloadPage from './pages/DownloadPage'
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage'
 import PrivacyPage from './pages/PrivacyPage'
+import { NFC_TRACKING_PATH, NFC_TRACKING_UTM_PATH } from './config/links'
+import { useAnalytics } from './hooks/useAnalytics'
+
+const NFC_OPEN_PENDING_KEY = 'item7go:nfc-open-pending';
+
+declare global {
+  interface Window {
+    __item7goNfcOpenPending?: boolean;
+  }
+}
+
+if (window.location.pathname.replace(/\/$/, '') === NFC_TRACKING_PATH) {
+  window.__item7goNfcOpenPending = true;
+
+  try {
+    sessionStorage.setItem(NFC_OPEN_PENDING_KEY, 'true');
+  } catch {
+    // Keep the in-memory flag when storage is unavailable.
+  }
+
+  window.history.replaceState(null, '', NFC_TRACKING_UTM_PATH);
+}
 
 const NotFoundPage: FC = () => (
   <div className="w-full min-h-screen px-4 md:px-section-px pt-16 md:pt-24 pb-8 md:pb-section-py relative flex flex-col justify-center items-center bg-background-main overflow-x-hidden">
@@ -29,15 +51,19 @@ const NotFoundPage: FC = () => (
   </div>
 )
 
-const RootLayout: FC = () => (
-  <div className="min-h-screen flex flex-col bg-black">
-    <ScrollRestoration />
-    <div className="flex-1">
-      <Outlet />
+const RootLayout: FC = () => {
+  useAnalytics();
+
+  return (
+    <div className="min-h-screen flex flex-col bg-black">
+      <ScrollRestoration />
+      <div className="flex-1">
+        <Outlet />
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-)
+  )
+}
 
 const router = createBrowserRouter([
   {
